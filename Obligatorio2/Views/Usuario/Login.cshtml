@@ -1,0 +1,13 @@
+﻿<h1>Login</h1>
+<form method="post">
+    <label>Email</label>
+    <input type="text" name="email" /><br />
+    <label>Password</label>
+    <input type="text" name="password" /><br />
+    <hr />
+    <input type="submit" value="Ingresar" />
+</form>
+<h3>No estas registrado?</h3><br />
+<a asp-action="Registro">Registrarse</a>
+
+<p>@ViewBag.msg</p>
