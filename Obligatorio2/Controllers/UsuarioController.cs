@@ -33,8 +33,7 @@ namespace Obligatorio2.Controllers
             {
                 ViewBag.msg = "Error";
             }
-            List<Usuario> USUARIOSC = s.GetUsuariosCliente();
-            List<Usuario> USUARIOSSINIDENTIFICAR = s.GetUsuariosSinIdentificar();
+          
             return View();
         }
 
@@ -47,9 +46,9 @@ namespace Obligatorio2.Controllers
 
         [HttpPost]
 
-        public IActionResult Registro(string email, string password)
+        public IActionResult Registro(string nombre,string apellido,string email,DateTime fechaNacimiento,string nombreUsuario,string password)
         {
-            Usuario u = s.AltaUsuarioSinIdentificar(email, password);
+            Usuario u = s.AltaUsuario(nombre, apellido,email,fechaNacimiento, nombreUsuario,password);
             if (u == null)
             {
                 ViewBag.msg="Error en el registro";
@@ -62,26 +61,7 @@ namespace Obligatorio2.Controllers
             return View();
         }
 
-        public IActionResult SerCliente()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult SerCliente(string nombre,string apellido,DateTime fechaNacimiento,string email,string nombreUsuario,string password)
-        {
-            Usuario resu = s.CambiarTipoUsuario(nombre, apellido, fechaNacimiento, email, nombreUsuario, password);
-            if (resu != null)
-            {
-                ViewBag.msg = "Cambio a usuario de tipo cliente realizado!";
-            }
-            else
-            {
-                ViewBag.msg = "ERROR";
-
-            }
-            return View();
-        }
+      
 
     }
 

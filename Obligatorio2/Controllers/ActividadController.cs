@@ -19,5 +19,18 @@ namespace Obligatorio2.Controllers
             List<Actividad> Actividades = s.GetActividades();
             return View(Actividades);
         }
+
+        public IActionResult Comprar(int id)
+        {
+            ViewBag.ActividadModificar = s.BuscarActividad(id);
+            return View();
+        }
+
+
+
     }
+
+
+
+  
 }

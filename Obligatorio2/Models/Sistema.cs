@@ -15,7 +15,7 @@ namespace Obligatorio2
         public List<Categoria> ListaCategorias = new List<Categoria>();
         public List<Compra> ListaCompras = new List<Compra>();
         public List<Usuario> ListaUsuarios = new List<Usuario>();
-        public List<Usuario> ListaUsuariosSinIdentificar = new List<Usuario>();
+        
 
 
         //------------------------Métodos para retornar las listas de objetos----------------------------
@@ -35,16 +35,12 @@ namespace Obligatorio2
             return ListaCategorias;
 
         }
-        public List<Usuario> GetUsuariosCliente()
+        public List<Usuario> GetUsuarios()
         {
             return ListaUsuarios;
 
         }
-        public List<Usuario> GetUsuariosSinIdentificar()
-        {
-            return ListaUsuariosSinIdentificar;
-
-        }
+       
 
 
 
@@ -189,7 +185,7 @@ namespace Obligatorio2
         }
 
         //Alta usuario CLIENTE
-        public Usuario AltaUsuario(string nombre, string apellido, string email, DateTime fechaNacimiento, string nombreUsuario, string password, Usuario.Roles rol)
+        public Usuario AltaUsuario(string nombre, string apellido, string email, DateTime fechaNacimiento, string nombreUsuario, string password)
         {
 
             Usuario resu = null;
@@ -215,32 +211,6 @@ namespace Obligatorio2
             }
 
         }
-
-        //Alta Usuario SIN IDENTIFICAR
-        public Usuario AltaUsuarioSinIdentificar(string email, string password)
-        {
-
-            Usuario resu = null;
-            bool OK = true;
-
-
-
-            if (password == null) { OK = false; }
-
-
-            if (OK)
-            {
-                Usuario u = new Usuario(email, password);
-                ListaUsuariosSinIdentificar.Add(u);
-                return u;
-            }
-            else
-            {
-                return resu;
-            }
-
-        }
-
         public Compra AltaCompra(Actividad actividad, int cantEntradas, Usuario usuario, DateTime fechaCompra, bool estado)
         {
             Compra resu = null;
@@ -271,45 +241,20 @@ namespace Obligatorio2
 
         //Cambia el usuario de tipo SIN IDENTIFICAR a CLIENTE
 
-        internal Usuario CambiarTipoUsuario(string nombre, string apellido, DateTime fechaNacimiento, string email, string nombreUsuario, string password)
+       
+       
+        internal bool ValidarCedula(string cedula)
         {
+            bool Mayuscula = false;
+            bool Minuscula = false;
+            bool dijito = false;
 
-            Usuario resu = null;
-            bool OK = true;
-            if (nombre == null) { OK = false; }
-            if (apellido == null) { OK = false; }
-            if (email == null) { OK = false; }
-            if (fechaNacimiento == null) { OK = false; }
-            if (nombreUsuario == null) { OK = false; }
-            if (password == null) { OK = false; }
-
-
-            if(nombre.Length<2 || apellido.Length < 2) { OK = false; }
-
-            
-
-
-            if (OK)
+            for(int i = 0; i < cedula.Length; i++)
             {
                
-                for (int i = 0; i < ListaUsuariosSinIdentificar.Count; i++)
-                {
-                    {
-                        if (ListaUsuariosSinIdentificar[i].email == email && ListaUsuariosSinIdentificar[i].password == password)
-                        {
-                            //Creo el Usuario Cliente
-                            resu = new Usuario(nombre, apellido, fechaNacimiento, email, nombreUsuario, password);
-                            ListaUsuarios.Add(resu);
-                            //Elimino el usuario sin identificar
-                            ListaUsuariosSinIdentificar.RemoveAt(i);
-                        }
-                    }
-                }    
             }
-            return resu;
+            return false;
         }
-       
-
 
 
         //Cambia el aforo máximo
@@ -392,6 +337,18 @@ namespace Obligatorio2
             
         }
 
+        internal Actividad BuscarActividad(int id)
+        {
+            Actividad resu = null;
+            foreach(Actividad a in ListaActividades)
+            {
+                if (a.Id_actividad == id)
+                {
+                    resu = a; ;
+                }
+            }
+            return resu;
+        }
 
 
 
@@ -417,15 +374,6 @@ namespace Obligatorio2
             foreach(Usuario usu in ListaUsuarios)
             {
                 if(usu.email==email && usu.password == password)
-                {
-                    resu = usu;
-                }
-            }
-
-            //buscamos si el usuario esta en la lista de usuarios SIN IDENTIFICAR
-            foreach (Usuario usu in ListaUsuariosSinIdentificar)
-            {
-                if (usu.email == email && usu.password == password)
                 {
                     resu = usu;
                 }
@@ -491,8 +439,12 @@ namespace Obligatorio2
             AltaActividad("Semana de la Arepa ", ListaCategorias[3], fechaConHora, ListaLugares[6], Actividad.edad_minima.C16, 1200);
             AltaActividad("TOC TOC ", ListaCategorias[1], fechaConHora3, ListaLugares[7], Actividad.edad_minima.P, 1500);
 
+            DateTime fechaConHoraUsuario1 = new DateTime(1999, 8, 11, 0, 0, 0);
+            DateTime fechaConHoraUsuario2 = new DateTime(1989, 8, 09, 0, 0, 0);
 
-            AltaUsuario("a", "a", "a", fechaConHora3, "a", "a", Usuario.Roles.Operador);
+            AltaUsuario("a", "a", "a", fechaConHoraUsuario1, "a", "a");
+            Usuario operador1 = new Usuario("Pedro", "Suarez", fechaConHoraUsuario2, "Operador1", "pedroOP@gmail.com", "9823",Usuario.Roles.Operador);
+            ListaUsuarios.Add(operador1);
         }
 
     }

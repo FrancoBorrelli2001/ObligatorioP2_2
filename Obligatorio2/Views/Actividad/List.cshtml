@@ -52,7 +52,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.PrecioFinal)
             </td>
-
+            <td>
+                @Html.ActionLink("Comprar", "Comprar", new { id = item.Id_actividad })
+            </td>
+           
         </tr>
 }
     </tbody>

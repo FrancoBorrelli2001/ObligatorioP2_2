@@ -9,7 +9,7 @@ namespace Obligatorio2
 
         public enum Roles
         {
-            SinIdentificar, Cliente, Operador
+            Cliente, Operador
         }
 
         private static int UltimoID = 1;
@@ -35,20 +35,27 @@ namespace Obligatorio2
             this.nombreUsuario = nombreUsuario;
             this.password = password;
             this.rol = Roles.Cliente;
-
         }
 
-
-        
-    //Constructor para un usuario nuevo sin identificar
-        public Usuario(string email,string password)
+        //Constructor para usuarios OPERADOR
+        public Usuario(string nombre, string apellido, DateTime fecha_nacimiento, string nombreUsuario, string email, string password,Roles rol)
         {
             ID_usuario = UltimoID;
             UltimoID++;
+            this.nombre = nombre;
+            this.apellido = apellido;
             this.email = email;
+            this.fecha_nacimiento = fecha_nacimiento;
+            this.nombreUsuario = nombreUsuario;
             this.password = password;
-            this.rol = Roles.SinIdentificar;
+            this.rol = rol;
         }
+
+
+
+
+        //Constructor para un usuario nuevo sin identificar
+
 
         public Usuario()
         {
