@@ -199,6 +199,10 @@ namespace Obligatorio2
             if (password == null) { OK = false; }
 
 
+            //VALIDAR CEDULA
+            if (ValidarEmail(email) == false) { OK = false; }
+
+
             if (OK)
             {
                 Usuario u = new Usuario(nombre, apellido, fechaNacimiento, nombreUsuario, email, password);
@@ -211,13 +215,32 @@ namespace Obligatorio2
             }
 
         }
+
+
+        internal bool ValidarEmail(string email)
+        {
+            bool resu = false;
+            bool Mayuscula = false;
+            bool Minuscula = false;
+            bool dijito = false;
+
+            for (int i = 0; i < email.Length; i++)
+            {
+
+            }
+            return resu;
+        }
+
+
+
+
         public Compra AltaCompra(Actividad actividad, int cantEntradas, Usuario usuario, DateTime fechaCompra, bool estado)
         {
             Compra resu = null;
             bool OK = true;
 
-
-
+           
+           
             if (usuario == null) { OK = false; }
 
 
@@ -233,28 +256,12 @@ namespace Obligatorio2
             }
         }
 
-
-
-
+     
         //------------------Métodos del sistema---------------------------------------------------
 
 
-        //Cambia el usuario de tipo SIN IDENTIFICAR a CLIENTE
 
-       
-       
-        internal bool ValidarCedula(string cedula)
-        {
-            bool Mayuscula = false;
-            bool Minuscula = false;
-            bool dijito = false;
 
-            for(int i = 0; i < cedula.Length; i++)
-            {
-               
-            }
-            return false;
-        }
 
 
         //Cambia el aforo máximo
