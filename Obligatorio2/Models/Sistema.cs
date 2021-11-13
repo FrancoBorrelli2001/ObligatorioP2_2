@@ -40,10 +40,19 @@ namespace Obligatorio2
             return ListaUsuarios;
 
         }
-       
 
 
+        //Singleton
+        private static Sistema instancia = null;
 
+        public static Sistema GetInstancia()
+        {
+            if (instancia == null)
+            {
+                instancia = new Sistema();
+            }
+            return instancia;
+        }
 
 
 
@@ -202,6 +211,15 @@ namespace Obligatorio2
             //VALIDAR CEDULA
             if (ValidarEmail(email) == false) { OK = false; }
 
+            //Verificamos si el nombre de usuario y el email son unicos
+            foreach (Usuario usu in ListaUsuarios)
+            {
+
+                if (usu.nombreUsuario == nombreUsuario || usu.email == email)
+                {
+                    OK = false;
+                }
+      }
 
             if (OK)
             {
@@ -219,7 +237,7 @@ namespace Obligatorio2
 
         internal bool ValidarEmail(string email)
         {
-            bool resu = false;
+            bool resu = true;
             bool Mayuscula = false;
             bool Minuscula = false;
             bool dijito = false;
@@ -234,19 +252,17 @@ namespace Obligatorio2
 
 
 
-        public Compra AltaCompra(Actividad actividad, int cantEntradas, Usuario usuario, DateTime fechaCompra, bool estado)
+        public Compra AltaCompra(Actividad actividad, int cantEntradas, Usuario usuario, DateTime fechaCompra)
         {
             Compra resu = null;
             bool OK = true;
 
+            if (cantEntradas <= 0) { OK = false; }
            
-           
-            if (usuario == null) { OK = false; }
-
 
             if (OK)
             {
-                Compra c = new Compra(actividad, cantEntradas, usuario, fechaCompra, estado);
+                Compra c = new Compra(actividad, cantEntradas, usuario, fechaCompra);
                 ListaCompras.Add(c);
                 return c;
             }
@@ -260,7 +276,47 @@ namespace Obligatorio2
         //------------------Métodos del sistema---------------------------------------------------
 
 
+        //Obtener Compras segun el cliente
+        internal List<Compra> ObtenerComprasSegunCliente(int? id)
+        {
+            List<Compra> resu = new List<Compra>();
+            foreach(Compra com in ListaCompras)
+            {
+                if (com.usuario.ID_usuario.Equals(id))
+                {
+                    resu.Add(com);
+                }
+            }
+            return resu;
+        }
 
+        internal List<Compra> ObtenerComprasACancelar()
+        {
+            List<Compra> resu = new List<Compra>();
+            foreach (Compra com in ListaCompras)
+            {
+                var hours = (com.actividad.Fecha_y_hora - DateTime.Now).TotalHours;
+                //Solo agregra las actividades que tienen una diferencia de 24 horas
+                if (hours > 24)
+                {
+                    resu.Add(com);
+                }
+              
+            }
+            return resu;
+        }
+
+        internal void DarMG(int id)
+        {
+            foreach(Actividad act in ListaActividades)
+            {
+                if (act.Id_actividad.Equals(id))
+                {
+                    act.Cantidad_me_gusta++;
+                }
+
+            }
+        }
 
 
 
@@ -356,29 +412,65 @@ namespace Obligatorio2
             }
             return resu;
         }
-
-
-
-
-        //Singleton
-        private static Sistema instancia = null;
-
-        public static Sistema GetInstancia()
+        internal Usuario BuscarUsuario(int? id)
         {
-            if (instancia == null)
+            Usuario resu = null;
+            foreach(Usuario usu in ListaUsuarios)
             {
-                instancia = new Sistema();
+                if (usu.ID_usuario.Equals(id))
+                {
+                    resu = usu;
+                }
             }
-            return instancia;
+            return resu;
+
         }
+
+        internal Compra BuscarCompra(int? id)
+        {
+            Compra resu = null;
+            foreach (Compra com in ListaCompras)
+            {
+                if (com.ID_compra.Equals(id))
+                {
+                    resu = com;
+                }
+            }
+            return resu;
+
+        }
+
+
+        internal bool CancelarCompra(int id)
+        {
+            bool eliminado = false;
+
+           for(int i = 0; i < ListaCompras.Count; i++)
+            {
+                if (ListaCompras[i].ID_compra.Equals(id))
+                {
+                    ListaCompras.RemoveAt(i);
+                    eliminado = true;
+                }
+            }
+            return eliminado;
+
+        }
+
+
+
+
 
 
         //Obtener usuario segun su email y password
         internal Usuario LoginUsuario(string email,string password)
         {
             Usuario resu = null;
-            //Buscamos si el usuario esta en la lista de usuarios normales
-            foreach(Usuario usu in ListaUsuarios)
+
+      
+
+            //Buscamos si el usuario esta en la lista de usuarios 
+            foreach (Usuario usu in ListaUsuarios)
             {
                 if(usu.email==email && usu.password == password)
                 {
@@ -430,6 +522,8 @@ namespace Obligatorio2
             DateTime fechaConHora3 = new DateTime(2024, 6, 07, 0, 00, 0);
             DateTime fechaConHora4 = new DateTime(2022, 8, 11, 0, 30, 0);
 
+            DateTime MenosDe24hs = new DateTime(2021, 11, 14, 0, 30, 0);
+            AltaActividad("Los Buitres ", ListaCategorias[2], MenosDe24hs, ListaLugares[7], Actividad.edad_minima.P, 1500);
 
 
             //Deben ser 10 actividades 5 en lugares abiertos 
@@ -445,6 +539,8 @@ namespace Obligatorio2
             AltaActividad("Rapido y Furioso 30 (Brian lives) ", ListaCategorias[0], fechaConHora4, ListaLugares[9], Actividad.edad_minima.P, 750);
             AltaActividad("Semana de la Arepa ", ListaCategorias[3], fechaConHora, ListaLugares[6], Actividad.edad_minima.C16, 1200);
             AltaActividad("TOC TOC ", ListaCategorias[1], fechaConHora3, ListaLugares[7], Actividad.edad_minima.P, 1500);
+
+       
 
             DateTime fechaConHoraUsuario1 = new DateTime(1999, 8, 11, 0, 0, 0);
             DateTime fechaConHoraUsuario2 = new DateTime(1989, 8, 09, 0, 0, 0);

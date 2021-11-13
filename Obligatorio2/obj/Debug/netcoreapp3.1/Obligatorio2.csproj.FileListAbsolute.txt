@@ -228,3 +228,8 @@ D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Obliga
 D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Obligatorio2.pdb
 D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Obligatorio2.genruntimeconfig.cache
 D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Actividad\Comprar.cshtml.g.cs
+D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Logout.cshtml.g.cs
+D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\VerCompras.cshtml.g.cs
+D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\CancelarCompra.cshtml.g.cs
+D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\VerComprasACancelar.cshtml.g.cs
+D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Actividad\MeGusta.cshtml.g.cs

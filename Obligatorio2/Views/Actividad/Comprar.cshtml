@@ -3,17 +3,47 @@
 
 <h1>Comprar entrada para la actividad</h1>
 <h2>Datos de la actividad a Comprar</h2>
-<label>Nombre</label><br />
-<input type="text" readonly value="@ViewBag.ActividadModificar.Nombre"/><br />
-<label>Categoria</label><br />
-<input type="text"  readonly value="@ViewBag.ActividadModificar.Categoria.Nombre"/><br />
-<label>Fecha</label><br />
-<input type="text" readonly value="@ViewBag.ActividadModificar.Fecha_y_hora"/><br />
-<label>Lugar</label><br /> 
-<input type="text" readonly  value="@ViewBag.ActividadModificar.Lugar.Nombre"/><br />
-<label>Edad Mínima</label><br />
-<input type="text" readonly  value="@ViewBag.ActividadModificar.Edad_minima" /><br />
-<label>Cantidad de MG</label><br />
-<input type="text" readonly  value="@ViewBag.ActividadModificar.Cantidad_me_gusta"/><br /> <hr />
-<label>Precio Final</label><br />
-<input type="text" readonly  value="@ViewBag.ActividadModificar.PrecioFinal"/><br /> <hr />
+
+<form method="post">
+    <label>ID Actividad</label>
+    <br />
+    <input type="text" readonly value="@ViewBag.Actividad.Id_actividad" name="idActividad" />
+    <br />
+
+    <label>Nombre</label>
+    <br />
+    <input type="text" readonly value="@ViewBag.Actividad.Nombre" />
+    <br />
+    <label>Nombre</label>
+    <br />
+    <input type="text" readonly value="@ViewBag.Actividad.Nombre" />
+    <br />
+    <label>Categoria</label>
+    <br />
+    <input type="text" readonly value="@ViewBag.Actividad.Categoria.Nombre" />
+    <br />
+    <label>Fecha</label>
+    <br />
+    <input type="text" readonly value="@ViewBag.Actividad.Fecha_y_hora" />
+    <br />
+    <label>Lugar</label>
+    <br />
+    <input type="text" readonly value="@ViewBag.Actividad.Lugar.Nombre" />
+    <br /> <p>
+        <label>Edad Mínima</label><br />
+        <input type="text" readonly value="@ViewBag.Actividad.Edad_minima" /><br />
+        <label>Cantidad de MG</label><br />
+        <input type="text" readonly value="@ViewBag.Actividad.Cantidad_me_gusta" /><br /> <hr />
+        <label>Precio Final</label><br />
+        <input type="text" readonly value="@ViewBag.Actividad.PrecioFinal" /><br /> <hr />
+        <hr />
+
+        <label>Cantidad de entradas</label>
+        <input type="number" name="cantEntradas" /><hr />
+    
+    <input type="submit" value="Comprar"/>
+
+</form>
+
+<h3>@ViewBag.msg</h3>
+<a asp-action="List">Volver</a>

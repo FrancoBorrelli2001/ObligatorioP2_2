@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Obligatorio2
 {
-    class Cerrado:Lugar
+    public class Cerrado:Lugar
     {
 
         //Valor aforo máximo (0-100)

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Obligatorio2
 {
-    class Usuario
+    public class Usuario
     {
 
         public enum Roles

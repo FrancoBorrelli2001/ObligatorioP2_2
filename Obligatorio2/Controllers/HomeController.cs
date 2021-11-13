@@ -28,6 +28,19 @@ namespace Obligatorio2.Controllers
             return View();
         }
 
+        public IActionResult Logout()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult Logout(string n)
+        {
+            HttpContext.Session.Clear();
+            return View("~/Views/Home/Index.cshtml");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

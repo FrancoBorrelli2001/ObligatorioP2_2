@@ -1,8 +1,12 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@using Microsoft.AspNetCore.Http;
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <h1 class="display-4">¡Bienvenido a nuestro sitio de eventos y compra de entradas para actividades!</h1>
+    
+
+    @if(@Context.Session.GetString("NombreLogueado") != null) { 
+
+            <h1 class="display-4">Hola de nuevo @Context.Session.GetString("NombreLogueado")</h1>
+        }
+
+    </div>

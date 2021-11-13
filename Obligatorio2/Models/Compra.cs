@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Obligatorio2
 {
-    class Compra
+   public class Compra
     {
         public static int UltimoID = 1;
         public int ID_compra { get; }
@@ -21,7 +21,7 @@ namespace Obligatorio2
 
         public double precio_final { get; set; }
 
-        public Compra( Actividad actividad, int cant_Entradas, Usuario usuario, DateTime fecha_hora_compra, bool estado)
+        public Compra( Actividad actividad, int cant_Entradas, Usuario usuario, DateTime fecha_hora_compra)
         {
             ID_compra = UltimoID;
             UltimoID++;
@@ -29,7 +29,7 @@ namespace Obligatorio2
             this.cant_Entradas = cant_Entradas;
             this.usuario = usuario;
             this.fecha_hora_compra = fecha_hora_compra;
-            this.estado = estado;
+            this.estado = true;
             this.precio_final = CalcularPrecioFinal();
         }
 
@@ -53,6 +53,10 @@ namespace Obligatorio2
         public double CalcularPrecioFinal()
         {
             double precioFinal = actividad.CalcularPrecioFinal() * cant_Entradas;
+            if (cant_Entradas >= 5)
+            {
+                precioFinal = precioFinal * 0.85;
+            }
             return precioFinal;
           
 
