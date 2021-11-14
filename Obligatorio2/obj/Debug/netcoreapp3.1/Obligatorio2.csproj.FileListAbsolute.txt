@@ -233,3 +233,8 @@ D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\
 D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\CancelarCompra.cshtml.g.cs
 D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\VerComprasACancelar.cshtml.g.cs
 D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Actividad\MeGusta.cshtml.g.cs
+D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Operador\VerComprasEntreFechas.cshtml.g.cs
+D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Operador\VerClientes.cshtml.g.cs
+D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Operador\Estadisticas.cshtml.g.cs
+D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Operador\ListarActividadesSegunLugar.cshtml.g.cs
+D:\Documentos\GitHub\ObligatorioP2_2\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Operador\VerActividadesEntreFechasYCategoria.cshtml.g.cs

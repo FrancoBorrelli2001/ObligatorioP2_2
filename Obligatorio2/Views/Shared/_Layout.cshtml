@@ -22,7 +22,7 @@
                     <ul class="navbar-nav flex-grow-1">
 
                         @* Muestro las opciones para el usuario sin identificar *@
-                        @if (Context.Session.GetString("IdLogueado") == null)
+                        @if (Context.Session.GetString("RolLogueado") == null)
                         {
 
                             <li class="nav-item">
@@ -36,23 +36,53 @@
                             </li>
 
                         }
-                        @* Muestro las opciones para el usuario Cliente  *@
-                        @if (Context.Session.GetString("RolLogueado") == "Cliente")
+                        else
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Actividad" asp-action="List">Listar Actividad</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">Cerrar Sesion</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="VerCompras">Ver Compras</a>
-                            </li>
-                        }
+                            @* Muestro las opciones para el usuario Cliente  *@
+                            @if (Context.Session.GetString("RolLogueado") == "Cliente")
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Actividad" asp-action="List">Listar Actividad</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">Cerrar Sesion</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="VerCompras">Ver Compras</a>
+                                </li>
+                            }
+                            else
+                            {
+                                @if (Context.Session.GetString("RolLogueado") == "Operador")
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">Cerrar Sesion</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Operador" asp-action="VerComprasEntreFechas">Ver compras entre dos Fechas</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Operador" asp-action="VerClientes">VerClientes</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Operador" asp-action="Estadisticas">Estadísticas</a>
+                                    </li>
+                                    
 
+
+
+                                }
+
+
+                            }
+
+                        }
                     </ul>
                 </div>
             </div>

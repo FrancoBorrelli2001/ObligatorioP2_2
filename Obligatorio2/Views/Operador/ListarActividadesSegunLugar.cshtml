@@ -1,0 +1,94 @@
+﻿<h1>Listar Actividades Segun Lugar</h1>
+<br />
+<form method="post">
+    <label>Lugar</label><br />
+    <select name="lugar">
+        @foreach (var lugar in @ViewBag.Lugares)
+        {
+            <option>@lugar.Nombre</option>
+        }
+    </select>
+    <br />
+    <input type="submit" value="Mostrar" />
+</form>
+
+
+@if (@ViewBag.LA != null)
+{
+
+    if (@ViewBag.LA.Count == 0)
+    {
+
+
+<h2>No existen Actividades Asociadas a  @ViewBag.Lugar</h2>
+    }
+    else
+    {
+<h1>Lista de Actividaes en @ViewBag.Lugar</h1>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ID Actividad
+                </th>
+                <th>
+                    Nombre de la Actividad
+                </th>
+                <th>
+                    Categoria
+                </th>
+                <th>
+                    Fecha y Hora
+                </th>
+                <th>
+                    Lugar
+                </th>
+                <th>
+                    Edad Minima
+                </th>
+                <th>
+                   Cantidad de Me Gusta
+                </th>
+                <th>
+                    Precio Final
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var act in @ViewBag.LA)
+            {
+            <tr>
+                <td>
+                    @act.Id_actividad
+                </td>
+                <td>
+                    @act.Nombre
+                </td>
+                <td>
+                    @act.Categoria.Nombre
+                </td>
+                <td>
+                    @act.Fecha_y_hora
+                </td>
+                <td>
+                    @act.Lugar.Nombre
+                </td>
+                <td>
+                    @act.Edad_minima
+                </td>
+                <td>
+                    @act.Cantidad_me_gusta
+                </td>
+                <td>
+                    @act.PrecioFinal
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    }
+}

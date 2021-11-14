@@ -1,0 +1,85 @@
+﻿
+<h1>Ver compras realizadas entre dos fechas</h1>
+<br />
+<form method="post">
+    <label>Fecha de inicio</label><br />
+    <input type="datetime-local" name="fecha1" /><br />
+    <label>Fecha final</label><br />
+    <input type="datetime-local" name="fecha2" /><br />
+    <hr />
+    <input type="submit" value="Mostrar" />
+</form>
+
+@if (@ViewBag.LC != null)
+{
+
+    @if (ViewBag.LC.Count == 0)
+    {
+                    <h3>No existen Compras entre las fechas @ViewBag.Fecha1 y @ViewBag.Fecha2</h3>
+    }
+    else
+    {
+    <h1>Lista de Compras</h1>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ID Compra
+                </th>
+                <th>
+                    Nombre de la Actividad
+                </th>
+                <th>
+                    Cantidad de Entradas
+                </th>
+                <th>
+                    Nombre de Usuario
+                </th>
+                <th>
+                    Fecha y Hora de la compra
+                </th>
+                <th>
+                    Estado
+                </th>
+                <th>
+                    Precio Final
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var compra in @ViewBag.LC)
+            {
+                <tr>
+                    <td>
+                        @compra.ID_compra
+                    </td>
+                    <td>
+                        @compra.actividad.Nombre
+                    </td>
+                    <td>
+                        @compra.cant_Entradas
+                    </td>
+                    <td>
+                        @compra.usuario.nombre
+                    </td>
+                    <td>
+                        @compra.fecha_hora_compra
+                    </td>
+                    <td>
+                        @compra.estado
+                    </td>
+                    <td>
+                        @compra.precio_final
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <h3>El precio total de todas las compras en @ViewBag.PrecioTotal</h3>
+    <hr />
+    }
+}

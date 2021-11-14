@@ -41,6 +41,23 @@ namespace Obligatorio2
 
         }
 
+        //Retorna los clientes de manera ordenada
+        internal List<Usuario> GetClientes()
+        {
+            List<Usuario> Clientes = new List<Usuario>();
+
+            foreach(Usuario usu in ListaUsuarios)
+            {
+                if (usu.rol == Usuario.Roles.Cliente)
+                {
+                    Clientes.Add(usu);
+                }
+            }
+
+            return Clientes;
+        }
+
+
 
         //Singleton
         private static Sistema instancia = null;
@@ -207,6 +224,9 @@ namespace Obligatorio2
             if (nombreUsuario == null) { OK = false; }
             if (password == null) { OK = false; }
 
+            //Validamos que la fecha de nacimiento sea anterior a la actual
+
+            if (fechaNacimiento > DateTime.Now) { OK = false; }
 
             //VALIDAR CEDULA
             if (ValidarEmail(email) == false) { OK = false; }
@@ -364,14 +384,14 @@ namespace Obligatorio2
       
 
         //Retorna las actividades asociadas a una categoria y en un rango de fechas
-        public List<Actividad> ListarActividadesSegunCategoriaYFecha(int IDcategoria, DateTime fecha1, DateTime fecha2) 
+        public List<Actividad> ListarActividadesSegunCategoriaYFecha(string nombreCategoria, DateTime fecha1, DateTime fecha2) 
         {
             List<Actividad> resu = new List<Actividad>();
 
             foreach(Actividad a in ListaActividades)
             {
                
-                if (a.Categoria.ID == IDcategoria && a.Fecha_y_hora>fecha1 && a.Fecha_y_hora<fecha2)
+                if (a.Categoria.Nombre == nombreCategoria && a.Fecha_y_hora>fecha1 && a.Fecha_y_hora<fecha2)
                 {
                     resu.Add(a);
                 }
@@ -380,8 +400,51 @@ namespace Obligatorio2
         }
 
 
+        //Retorna las compras realizadas en un rango de fechas
+        internal List<Compra> ListarComprasSegunFechas(DateTime fecha1, DateTime fecha2)
+        {
+            List<Compra> resu = new List<Compra>();
 
-       
+
+            foreach (Compra c in ListaCompras)
+            {
+
+                if (c.fecha_hora_compra > fecha1 && c.fecha_hora_compra < fecha2)
+                {
+                    resu.Add(c);
+                }
+            }
+            return resu;
+        }
+
+        internal double ObtenerPrecioTotalDeCompras(List<Compra> compras)
+        {
+            double resu = 0;
+            foreach(Compra com in compras)
+            {
+                resu = resu + com.precio_final;
+            }
+            return resu;
+
+        }
+
+        //Retorna las actividades que coincidan con un lugar
+
+        internal List<Actividad> ObtenerActividadesSegunLugar(string nombre)
+        {
+            List<Actividad> resu = new List<Actividad>();
+
+            foreach(Actividad act in ListaActividades)
+            {
+                if (act.Lugar.Nombre == nombre)
+                {
+                    resu.Add(act);
+                }
+            }
+            return resu;
+        }
+
+
 
         //Retorna las actividades para todo publico
         public List<Actividad> ObtenerActividadesTodoPublico()
@@ -511,10 +574,10 @@ namespace Obligatorio2
 
 
             // se piden 4 Categorias
-            AltaCategoria("Categoria", "cine", Categoria.TiposCategoria.cine);
-            AltaCategoria("Categoria 2", "teatro", Categoria.TiposCategoria.teatro);
-            AltaCategoria("Categoria 3", "Musical", Categoria.TiposCategoria.concierto);
-            AltaCategoria("Categoria 4", "Gastronomica", Categoria.TiposCategoria.feria_gastronomica);
+            AltaCategoria("Cine", "cine", Categoria.TiposCategoria.cine);
+            AltaCategoria("Teatro", "teatro", Categoria.TiposCategoria.teatro);
+            AltaCategoria("Musica", "Musical", Categoria.TiposCategoria.concierto);
+            AltaCategoria("Gastronomia", "Gastronomica", Categoria.TiposCategoria.feria_gastronomica);
 
             //Actividades
             DateTime fechaConHora = new DateTime(2022, 4, 23, 0, 0, 0);

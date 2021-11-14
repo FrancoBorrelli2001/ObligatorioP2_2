@@ -30,7 +30,7 @@ namespace Obligatorio2
             this.usuario = usuario;
             this.fecha_hora_compra = fecha_hora_compra;
             this.estado = true;
-            this.precio_final = CalcularPrecioFinal();
+            this.precio_final = Math.Floor(CalcularPrecioFinal());
         }
 
         public Compra()
