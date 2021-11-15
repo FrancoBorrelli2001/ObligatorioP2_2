@@ -6069,19 +6069,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Franco\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documentos\\GitHub\\ObligatorioP2_2\\Obligatorio2\\Obligatorio2.csproj",
+      "projectUniqueName": "D:\\Repo\\ObligatorioP2_2\\Obligatorio2\\Obligatorio2.csproj",
       "projectName": "Obligatorio2",
-      "projectPath": "D:\\Documentos\\GitHub\\ObligatorioP2_2\\Obligatorio2\\Obligatorio2.csproj",
-      "packagesPath": "C:\\Users\\Franco\\.nuget\\packages\\",
-      "outputPath": "D:\\Documentos\\GitHub\\ObligatorioP2_2\\Obligatorio2\\obj\\",
+      "projectPath": "D:\\Repo\\ObligatorioP2_2\\Obligatorio2\\Obligatorio2.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "D:\\Repo\\ObligatorioP2_2\\Obligatorio2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Franco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

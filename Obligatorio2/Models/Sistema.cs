@@ -463,6 +463,28 @@ namespace Obligatorio2
             
         }
 
+        public List<Compra> ObtenerComprasMayorValor()
+        {
+            double mayor = 0;
+            List<Compra> resu = new List<Compra>();
+
+            foreach(Compra compra in ListaCompras)
+            {
+                if (compra.precio_final > mayor)
+                {
+                    mayor = compra.precio_final;
+                    resu.Clear();
+                    resu.Add(compra);
+
+                }else if (compra.precio_final == mayor)
+                {
+                    resu.Add(compra);
+                }
+            }
+
+            return resu;
+        }
+
         internal Actividad BuscarActividad(int id)
         {
             Actividad resu = null;

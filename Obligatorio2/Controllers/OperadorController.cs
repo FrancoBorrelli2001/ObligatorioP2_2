@@ -99,5 +99,12 @@ namespace Obligatorio2.Controllers
             return View();
         }
 
+        public IActionResult ComprasMayorValor()
+        {
+            List<Compra> resu = s.ObtenerComprasMayorValor();
+            return View(resu);
+
+        }
+
     }
 }

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Obligatorio2.Compra>
+
+@{
+    ViewData["Title"] = "ComprasMayorValor";
+}
+
+<h1>La/Las compras de mayor valor es></h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_compra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cant_Entradas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_hora_compra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precio_final)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_compra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cant_Entradas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_hora_compra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio_final)
+            </td>
+        
+        </tr>
+}
+    </tbody>
+</table>
