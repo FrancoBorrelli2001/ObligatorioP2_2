@@ -106,5 +106,34 @@ namespace Obligatorio2.Controllers
 
         }
 
+        public IActionResult Otros()
+        {
+            return View();
+        }
+
+
+        public IActionResult CambiarPrecioBaseActividades()
+        {
+            ViewBag.PrecioBaseActual = s.GetPrecioBaseActividad();
+            return View();
+        }
+        [HttpPost]
+
+        public IActionResult CambiarPrecioBaseActividades(double nuevoPrecio)
+        {
+          
+            if (s.SetPrecioBaseActividad(nuevoPrecio))
+            {
+                ViewBag.msg = "Cambio Realizado";
+            }
+            else
+            {
+                ViewBag.msg = "El nuevo precio debe ser menor";
+            }
+
+            ViewBag.PrecioBaseActual = s.GetPrecioBaseActividad();
+            return View();
+        }
+
     }
 }

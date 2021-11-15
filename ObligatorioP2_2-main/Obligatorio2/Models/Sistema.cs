@@ -229,7 +229,7 @@ namespace Obligatorio2
             if (fechaNacimiento > DateTime.Now) { OK = false; }
 
             //VALIDAR CEDULA
-            if (ValidarEmail(email) == false) { OK = false; }
+
 
             //Verificamos si el nombre de usuario y el email son unicos
             foreach (Usuario usu in ListaUsuarios)
@@ -239,18 +239,30 @@ namespace Obligatorio2
                 {
                     OK = false;
                 }
-      }
+            }
 
+            //Si no hay atributos nulos entra 
             if (OK)
             {
-                Usuario u = new Usuario(nombre, apellido, fechaNacimiento, nombreUsuario, email, password);
-                ListaUsuarios.Add(u);
-                return u;
+                //Si el email esta correcto crea el usuario
+                if (ValidarEmail(email)){
+                    Usuario u = new Usuario(nombre, apellido, fechaNacimiento, nombreUsuario, email, password);
+                    ListaUsuarios.Add(u);
+                    return u;
+                }
+                else
+                {
+                   //Sino retorna null
+                    return resu;
+                }
             }
             else
             {
+                //Sino retorna null
                 return resu;
             }
+        
+           
 
         }
 
@@ -295,6 +307,27 @@ namespace Obligatorio2
      
         //------------------Métodos del sistema---------------------------------------------------
 
+
+        //Obtener Precio Base de Actividades
+        internal double GetPrecioBaseActividad()
+        {
+            return Actividad.GetPrecioBase();
+        }
+        
+        //Cambiar Precio Base Actividades
+
+       internal bool SetPrecioBaseActividad(double nuevoPrecio)
+        {
+            if (nuevoPrecio >= 0)
+            {
+                Actividad.SetPrecioBase(nuevoPrecio);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         //Obtener Compras segun el cliente
         internal List<Compra> ObtenerComprasSegunCliente(int? id)

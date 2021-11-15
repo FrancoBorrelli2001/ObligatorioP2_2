@@ -19,6 +19,7 @@ namespace Obligatorio2
 
         public bool estado { get; set; }
 
+        public double Precio_Final { get; set; }
       
 
         public Compra( Actividad actividad, int cant_Entradas, Usuario usuario, DateTime fecha_hora_compra)
@@ -30,6 +31,12 @@ namespace Obligatorio2
             this.usuario = usuario;
             this.fecha_hora_compra = fecha_hora_compra;
             this.estado = true;
+
+            /*El calcular precio final es un atributo del objeto, de modo que si se cambia el valor de precio base de 
+             Actividades el precio de las compras hechas en el pasado no cambia.
+             */
+            
+            Precio_Final = CalcularPrecioFinal();
         
         }
 
