@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X1LTP1ZqbAStalSg1M6qWnR6gLB6PhsYQTrqaBbY0HE/dNYUgWyj8chs8IinzX+mXrH4FMyeh+ayyuXvsBuKxg==",
+  "dgSpecHash": "AtkYTVLiifXC6bUgSiGHq84knsiyYTGmKv4sRRJXEMoJ0ll45v+fiUzVWVokogRoi7c8U4V0JVF8P2M1FE9AOQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Franco\\OneDrive\\Escritorio\\AA\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj",
+  "projectFilePath": "D:\\Documentos\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Franco\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Franco\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

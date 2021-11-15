@@ -422,7 +422,7 @@ namespace Obligatorio2
             double resu = 0;
             foreach(Compra com in compras)
             {
-                resu = resu + com.precio_final;
+                resu = resu + com.CalcularPrecioFinal();
             }
             return resu;
 
@@ -470,13 +470,13 @@ namespace Obligatorio2
 
             foreach(Compra compra in ListaCompras)
             {
-                if (compra.precio_final > mayor)
+                if (compra.CalcularPrecioFinal() > mayor)
                 {
-                    mayor = compra.precio_final;
+                    mayor = compra.CalcularPrecioFinal();
                     resu.Clear();
                     resu.Add(compra);
 
-                }else if (compra.precio_final == mayor)
+                }else if (compra.CalcularPrecioFinal() == mayor)
                 {
                     resu.Add(compra);
                 }

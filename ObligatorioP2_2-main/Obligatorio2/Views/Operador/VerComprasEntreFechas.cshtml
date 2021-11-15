@@ -52,6 +52,7 @@
         <tbody>
             @foreach (var compra in @ViewBag.LC)
             {
+                var PrecioFinal = compra.CalcularPrecioFinal();
                 <tr>
                     <td>
                         @compra.ID_compra
@@ -72,7 +73,7 @@
                         @compra.estado
                     </td>
                     <td>
-                        @compra.precio_final
+                        @PrecioFinal
                     </td>
                 </tr>
             }

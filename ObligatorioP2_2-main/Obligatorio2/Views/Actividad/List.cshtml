@@ -26,7 +26,7 @@
                     @Html.DisplayNameFor(model => model.Cantidad_me_gusta)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.PrecioFinal)
+                  Precio Final
                 </th>
                 <th></th>
             </tr>
@@ -34,6 +34,7 @@
         <tbody>
             @foreach (var item in Model)
             {
+                var PrecioFinal = item.CalcularPrecioFinal();
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Id_actividad)
@@ -51,7 +52,7 @@
                     @Html.DisplayFor(modelItem => item.Cantidad_me_gusta)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.PrecioFinal)
+                    @PrecioFinal
                 </td>
 
                 @if (@Context.Session.GetString("RolLogueado") == "Cliente")

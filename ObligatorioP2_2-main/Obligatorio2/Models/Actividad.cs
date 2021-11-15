@@ -42,7 +42,7 @@ namespace Obligatorio2
         public Lugar Lugar { get; set; }
         public edad_minima Edad_minima { get; set; }
         public int Cantidad_me_gusta { get; set; }
-        public double PrecioFinal { get; set; }
+
       
 
 
@@ -59,7 +59,7 @@ namespace Obligatorio2
             Lugar = lugar;
             Edad_minima = edad_minima;
             Cantidad_me_gusta = cantidad_me_gusta;
-            PrecioFinal = CalcularPrecioFinal();
+         
 
         }
 
@@ -71,7 +71,7 @@ namespace Obligatorio2
         public double CalcularPrecioFinal()
         {
             double precioFinal = Lugar.ObtenerDescuento(PrecioBase);
-            return precioFinal;
+            return Math.Floor(precioFinal);
         }
        
 

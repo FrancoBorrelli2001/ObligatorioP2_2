@@ -6074,11 +6074,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Franco\\OneDrive\\Escritorio\\AA\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj",
+      "projectUniqueName": "D:\\Documentos\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj",
       "projectName": "Obligatorio2",
-      "projectPath": "C:\\Users\\Franco\\OneDrive\\Escritorio\\AA\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj",
+      "projectPath": "D:\\Documentos\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj",
       "packagesPath": "C:\\Users\\Franco\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Franco\\OneDrive\\Escritorio\\AA\\ObligatorioP2_2-main\\Obligatorio2\\obj\\",
+      "outputPath": "D:\\Documentos\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Franco\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -24,7 +24,7 @@
                 @Html.DisplayNameFor(model => model.estado)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.precio_final)
+                PrecioFinal
             </th>
             <th></th>
         </tr>
@@ -32,6 +32,7 @@
     <tbody>
         @foreach (var item in Model)
         {
+            var PrecioFinal = item.CalcularPrecioFinal();
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.ID_compra)
@@ -49,7 +50,7 @@
                     @Html.DisplayFor(modelItem => item.estado)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.precio_final)
+                    @PrecioFinal
                 </td>
                 <td>
                     @Html.ActionLink("Cancelar Compra", "CancelarCompra", new { id = item.ID_compra })

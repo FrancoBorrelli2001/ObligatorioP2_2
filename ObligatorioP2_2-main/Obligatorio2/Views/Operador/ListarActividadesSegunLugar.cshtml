@@ -60,6 +60,7 @@
         <tbody>
             @foreach (var act in @ViewBag.LA)
             {
+                var PrecioFinal = act.CalcularPrecioFinal();
             <tr>
                 <td>
                     @act.Id_actividad
@@ -83,7 +84,7 @@
                     @act.Cantidad_me_gusta
                 </td>
                 <td>
-                    @act.PrecioFinal
+                    @PrecioFinal
                 </td>
             </tr>
             }

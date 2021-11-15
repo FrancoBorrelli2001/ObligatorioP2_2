@@ -19,7 +19,7 @@ namespace Obligatorio2
 
         public bool estado { get; set; }
 
-        public double precio_final { get; set; }
+      
 
         public Compra( Actividad actividad, int cant_Entradas, Usuario usuario, DateTime fecha_hora_compra)
         {
@@ -30,7 +30,7 @@ namespace Obligatorio2
             this.usuario = usuario;
             this.fecha_hora_compra = fecha_hora_compra;
             this.estado = true;
-            this.precio_final = Math.Floor(CalcularPrecioFinal());
+        
         }
 
         public Compra()
@@ -47,7 +47,7 @@ namespace Obligatorio2
             "\n" + " - Usuario --> " + usuario +
             "\n" + " - Fecha y hora: " + fecha_hora_compra +
             "\n" + " - Estado: " + estado +
-            "\n" + " - Precio final: " + precio_final + "\n";
+            "\n" + " - Precio final: " + CalcularPrecioFinal() + "\n";
         }
 
         public double CalcularPrecioFinal()
@@ -57,7 +57,7 @@ namespace Obligatorio2
             {
                 precioFinal = precioFinal * 0.85;
             }
-            return precioFinal;
+            return Math.Floor(precioFinal);
           
 
         }
