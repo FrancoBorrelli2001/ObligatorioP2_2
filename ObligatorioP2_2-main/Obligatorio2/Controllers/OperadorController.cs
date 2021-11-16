@@ -13,7 +13,7 @@ namespace Obligatorio2.Controllers
     {
 
         Sistema s = Sistema.GetInstancia();
-        
+
 
         public IActionResult Index()
         {
@@ -33,7 +33,7 @@ namespace Obligatorio2.Controllers
             return View("~/Views/Home/Index.cshtml");
         }
 
-      public IActionResult VerComprasEntreFechas()
+        public IActionResult VerComprasEntreFechas()
         {
             return View();
         }
@@ -42,7 +42,7 @@ namespace Obligatorio2.Controllers
         public IActionResult VerComprasEntreFechas(DateTime fecha1, DateTime fecha2)
         {
             List<Compra> ComprasEntreFechas = s.ListarComprasSegunFechas(fecha1, fecha2);
-            
+
             ViewBag.LC = ComprasEntreFechas;
             ViewBag.PrecioTotal = s.ObtenerPrecioTotalDeCompras(ComprasEntreFechas);
             ViewBag.Fecha1 = fecha1;
@@ -91,7 +91,7 @@ namespace Obligatorio2.Controllers
         public IActionResult VerActividadesEntreFechasYCategoria(DateTime fecha1, DateTime fecha2, string nombreCategoria)
         {
             ViewBag.Categorias = s.GetCategorias();
-            ViewBag.LA = s.ListarActividadesSegunCategoriaYFecha(nombreCategoria,fecha1, fecha2);
+            ViewBag.LA = s.ListarActividadesSegunCategoriaYFecha(nombreCategoria, fecha1, fecha2);
             ViewBag.Categoria = nombreCategoria;
             ViewBag.Fecha1 = fecha1;
             ViewBag.Fecha2 = fecha2;
@@ -121,7 +121,7 @@ namespace Obligatorio2.Controllers
 
         public IActionResult CambiarPrecioBaseActividades(double nuevoPrecio)
         {
-          
+
             if (s.SetPrecioBaseActividad(nuevoPrecio))
             {
                 ViewBag.msg = "Cambio Realizado";
@@ -134,6 +134,58 @@ namespace Obligatorio2.Controllers
             ViewBag.PrecioBaseActual = s.GetPrecioBaseActividad();
             return View();
         }
+
+        //Cambia el Aforo Máximo
+        public IActionResult CambiarAforoMaximo()
+        {
+            ViewBag.AforoActual = s.GetAforoMaximo();
+            return View();
+
+        }
+
+        [HttpPost]
+
+        public IActionResult CambiarAforoMaximo(int nuevoAforo)
+        {
+            if (s.SetAforoMaximo(nuevoAforo))
+            {
+                ViewBag.msg = "Aforo Cambiado!";
+            }
+            else
+            {
+                ViewBag.msg = "El nuevo aforo debe estar entre 0 y 100";
+            }
+            ViewBag.AforoActual = s.GetAforoMaximo();
+            return View();
+        }
+
+
+        //Cambia el precio de las butacas
+        public IActionResult CambiarPrecioButacas()
+        {
+            ViewBag.PrecioButacasActual = s.GetPrecioButacas();
+            return View();
+
+        }
+
+        [HttpPost]
+
+        public IActionResult CambiarPrecioButacas(double nuevoPrecio)
+        {
+            if (s.SetPrecioButacas(nuevoPrecio))
+            {
+                ViewBag.msg = "Precio cambiado!";
+            }
+            else
+            {
+                ViewBag.msg = "El precio debe ser positivo";
+            }
+            ViewBag.PrecioButacasActual = s.GetPrecioButacas();
+            return View();
+        }
+
+
+
 
     }
 }

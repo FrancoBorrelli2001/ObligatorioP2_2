@@ -51,6 +51,14 @@ namespace Obligatorio2
             {
                 precio = precio * 1.15;
             }
+
+
+            //Si el mantenimiento es mayor a 1000 pesos se le agrega un 5%
+
+            if (Mantenimiento > 1000)
+            {
+                precio = precio * 1.05;
+            }
             return precio;
         }
 

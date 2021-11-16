@@ -492,3 +492,5 @@ D:\Documentos\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug
 D:\Documentos\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Obligatorio2.genruntimeconfig.cache
 D:\Documentos\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Operador\CambiarPrecioBaseActividades.cshtml.g.cs
 D:\Documentos\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Operador\Otros.cshtml.g.cs
+D:\Documentos\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Operador\CambiarAforoMaximo.cshtml.g.cs
+D:\Documentos\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Operador\CambiarPrecioButacas.cshtml.g.cs

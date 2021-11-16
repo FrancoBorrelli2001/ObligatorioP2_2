@@ -1,0 +1,11 @@
+﻿<h1>Cambiar Aforo Máximo</h1>
+<hr />
+
+<form method="post">
+    <label>Aforo Actual</label><br />
+    <input type="text" readonly value="@ViewBag.AforoActual" /><br /><hr />
+    <label>Nuevo Aforo</label><br />
+    <input type="number" name="nuevoAforo" /><br /> <hr />
+    <input type="submit" value="Cambiar" />
+</form>
+<h3>@ViewBag.msg</h3>

@@ -518,14 +518,58 @@ namespace Obligatorio2
             return resu;
         }
 
+        //Obtiene el aforo máximo actual
+        internal int GetAforoMaximo()
+        {
+            return Cerrado.GetAforoMaximo();
+        }
+
+        //Cambia el Aforo máximo
+
+        internal bool SetAforoMaximo(int nuevoAforo)
+        {
+            bool resu = false;
+
+            if(nuevoAforo>=0 && nuevoAforo <= 100)
+            {
+                Cerrado.SetAforoMaximo(nuevoAforo);
+                resu = true;
+            }
+            return resu;
+
+
+        }
+
+
+        //Obtiene el precio de las butacas al aire libre
+        internal double GetPrecioButacas()
+        {
+            return Abierto.GetPrecioButaca();
+        }
+
+        //Cambia el precio de las butacas al aire libre
+
+        internal bool SetPrecioButacas(double nuevoPrecio)
+        {
+            if (nuevoPrecio >= 0)
+            {
+                Abierto.SetPrecioButaca(nuevoPrecio);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         internal Actividad BuscarActividad(int id)
         {
             Actividad resu = null;
             foreach(Actividad a in ListaActividades)
             {
-                if (a.Id_actividad == id)
+                if (a.Id_actividad.Equals(id))
                 {
-                    resu = a; ;
+                    resu = a; 
                 }
             }
             return resu;
