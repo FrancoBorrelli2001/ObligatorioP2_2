@@ -75,7 +75,7 @@ namespace Obligatorio2.Controllers
             Usuario u = s.AltaUsuario(nombre, apellido,email,fechaNacimiento, nombreUsuario,password);
             if (u == null)
             {
-                ViewBag.msg="Error en el registro";
+                ViewBag.msg="Error en el registro, verifique los datos ingresados";
             }
             else
             {

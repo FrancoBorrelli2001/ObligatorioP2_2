@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Obligatorio2
@@ -224,6 +225,14 @@ namespace Obligatorio2
             if (nombreUsuario == null) { OK = false; }
             if (password == null) { OK = false; }
 
+            //Nombre y Apellido con 2 caracteres
+            if(nombre.Length<=2 || apellido.Length <= 2) { OK = false; }
+
+            //Contraseña con mas de 6 caracteres
+            if (password.Length <= 6) { OK = false; }
+
+
+
             //Validamos que la fecha de nacimiento sea anterior a la actual
 
             if (fechaNacimiento > DateTime.Now) { OK = false; }
@@ -245,7 +254,7 @@ namespace Obligatorio2
             if (OK)
             {
                 //Si el email esta correcto crea el usuario
-                if (ValidarEmail(email)){
+                if (ValidarPassword(password)){
                     Usuario u = new Usuario(nombre, apellido, fechaNacimiento, nombreUsuario, email, password);
                     ListaUsuarios.Add(u);
                     return u;
@@ -267,16 +276,13 @@ namespace Obligatorio2
         }
 
 
-        internal bool ValidarEmail(string email)
+        internal bool ValidarPassword(string pass)
         {
             bool resu = true;
-            bool Mayuscula = false;
-            bool Minuscula = false;
-            bool dijito = false;
 
-            for (int i = 0; i < email.Length; i++)
+            if (!pass.Any(char.IsUpper) && !pass.Any(char.IsLower) && !pass.Any(char.IsDigit))
             {
-
+                resu = false;
             }
             return resu;
         }
