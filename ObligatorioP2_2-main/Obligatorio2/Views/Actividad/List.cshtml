@@ -1,70 +1,84 @@
 ﻿@model IEnumerable<Obligatorio2.Actividad>
-    @using Microsoft.AspNetCore.Http;
-    @{
-        ViewData["Title"] = "List";
-    }
+@using Microsoft.AspNetCore.Http;
+@{ ViewData["Title"] = "List"; }
 
-    <h1>List</h1>
+<h1>List</h1>
+
+@if (Context.Session.GetString("RolLogueado") == "Operador")
+{
+<a asp-action="Login">Volver</a>}
 
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Id_actividad)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Nombre)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Fecha_y_hora)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Edad_minima)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Cantidad_me_gusta)
-                </th>
-                <th>
-                  Precio Final
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                var PrecioFinal = item.CalcularPrecioFinal();
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id_actividad)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Fecha_y_hora)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Edad_minima)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cantidad_me_gusta)
-                </td>
-                <td>
-                    @PrecioFinal
-                </td>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id_actividad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_y_hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Edad_minima)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad_me_gusta)
+            </th>
+            <th>
+                Precio Final
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            var PrecioFinal = item.CalcularPrecioFinal();
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Id_actividad)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nombre)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Fecha_y_hora)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Edad_minima)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Cantidad_me_gusta)
+    </td>
+    <td>
+        @PrecioFinal
+    </td>
 
-                @if (@Context.Session.GetString("RolLogueado") == "Cliente")
-                {
-                    <td>
-                        @Html.ActionLink("Comprar", "Comprar", new { id = item.Id_actividad })
-                    </td>
+    @if (@Context.Session.GetString("RolLogueado") == "Cliente")
+    {
+<td>
+    @Html.ActionLink("Comprar", "Comprar", new { id = item.Id_actividad })
+</td>
                     <td>
                         @Html.ActionLink("Me gusta!", "MeGusta", new { id = item.Id_actividad })
                     </td>
-                }
-            </tr>
-            }
-        </tbody>
-    </table>
+}
+
+    @if (Context.Session.GetString("RolLogueado") == "Operador")
+    {
+
+
+<td>
+    @Html.ActionLink("Modificar", "ModificarActividad", new { id = item.Id_actividad })
+</td>
+                    <td>
+                        @Html.ActionLink("Eliminar", "EliminarActividad", new { id = item.Id_actividad })
+                    </td>}
+
+</tr>
+       }
+    </tbody>
+</table>

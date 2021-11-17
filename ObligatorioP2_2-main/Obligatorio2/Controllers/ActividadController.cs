@@ -22,6 +22,7 @@ namespace Obligatorio2.Controllers
             return View(Actividades);
         }
 
+
         public IActionResult MeGusta(int id)
         {
             s.DarMG(id);

@@ -631,7 +631,7 @@ namespace Obligatorio2
 
 
         //Obtener usuario segun su email y password
-        internal Usuario LoginUsuario(string email,string password)
+        internal Usuario LoginUsuario(string nombreUsuario,string password)
         {
             Usuario resu = null;
 
@@ -640,7 +640,7 @@ namespace Obligatorio2
             //Buscamos si el usuario esta en la lista de usuarios 
             foreach (Usuario usu in ListaUsuarios)
             {
-                if(usu.email==email && usu.password == password)
+                if(usu.nombreUsuario==nombreUsuario && usu.password == password)
                 {
                     resu = usu;
                 }
@@ -713,8 +713,8 @@ namespace Obligatorio2
             DateTime fechaConHoraUsuario1 = new DateTime(1999, 8, 11, 0, 0, 0);
             DateTime fechaConHoraUsuario2 = new DateTime(1989, 8, 09, 0, 0, 0);
 
-            AltaUsuario("a", "a", "a", fechaConHoraUsuario1, "a", "a");
-            Usuario operador1 = new Usuario("Pedro", "Suarez", fechaConHoraUsuario2, "Operador1", "pedroOP@gmail.com", "9823",Usuario.Roles.Operador);
+            AltaUsuario("pedro", "martinez", "pedro@gmail.com", fechaConHoraUsuario1, "a", "AAaa123");
+            Usuario operador1 = new Usuario("Pedro", "Suarez", fechaConHoraUsuario2, "operador1", "pedroOP@gmail.com", "AAaa123",Usuario.Roles.Operador);
             ListaUsuarios.Add(operador1);
         }
 

@@ -22,9 +22,9 @@ namespace Obligatorio2.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string email, string password)
+        public IActionResult Login(string nombreUsuario, string password)
         {
-            Usuario buscado = s.LoginUsuario(email, password);
+            Usuario buscado = s.LoginUsuario(nombreUsuario, password);
             if (buscado != null)
             {
                 //CREO VARIABLES DE SESION 
@@ -73,7 +73,7 @@ namespace Obligatorio2.Controllers
         public IActionResult Registro(string nombre,string apellido,string email,DateTime fechaNacimiento,string nombreUsuario,string password)
         {
             Usuario u = s.AltaUsuario(nombre, apellido,email,fechaNacimiento, nombreUsuario,password);
-            if (u == null)
+            if (u != null)
             {
                 ViewBag.msg="Error en el registro, verifique los datos ingresados";
             }
