@@ -237,7 +237,6 @@ namespace Obligatorio2
 
             if (fechaNacimiento > DateTime.Now) { OK = false; }
 
-            //VALIDAR CEDULA
 
 
             //Verificamos si el nombre de usuario y el email son unicos
@@ -728,6 +727,16 @@ namespace Obligatorio2
             Usuario operador2 = new Usuario("Rafael", "Cohen", fechaConHoraUsuario1, "Admin2", "Rafael@gmail.com", "A123456", Usuario.Roles.Operador);
             ListaUsuarios.Add(operador1);
             ListaUsuarios.Add(operador2);
+
+            //Alta Compras
+            //AltaCompra(ListaActividades[1], 2, ListaUsuarios[1], DateTime.Today);
+            //AltaCompra(ListaActividades[3], 2, ListaUsuarios[2], DateTime.Today);
+            //AltaCompra(ListaActividades[4], 2, ListaUsuarios[2], DateTime.Today);
+            //AltaCompra(ListaActividades[7], 2, ListaUsuarios[2], DateTime.Today);
+            //AltaCompra(ListaActividades[2], 2, ListaUsuarios[3], DateTime.Today);
+            //AltaCompra(ListaActividades[9], 2, ListaUsuarios[3], DateTime.Today);
+            //AltaCompra(ListaActividades[8], 2, ListaUsuarios[4], DateTime.Today);
+            //AltaCompra(ListaActividades[7], 2, ListaUsuarios[4], DateTime.Today);
         }
 
     }

@@ -4,17 +4,18 @@
     ViewData["Title"] = "VerClientes";
 }
 
-<h1>VerClientes</h1>
+<h4>Clientes</h4>
+<br />
 
 
 <table class="table">
-    <thead>
+    <thead class="text-center">
         <tr>
             <th>
                 ID Usuario
             </th>
             <th>
-               Nombre
+                Nombre
             </th>
             <th>
                 Apellido
@@ -23,7 +24,7 @@
                 Email
             </th>
             <th>
-               Fecha de Nacimiento
+                Fecha de Nacimiento
             </th>
             <th>
                 Nombre Usuario
@@ -32,40 +33,41 @@
                 Password
             </th>
             <th>
-               Rol
+                Rol
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ID_usuario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.apellido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fecha_nacimiento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nombreUsuario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.rol)
-            </td>
-           
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr class="text-center">
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_usuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_nacimiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombreUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.rol)
+                </td>
+
+            </tr>
+        }
     </tbody>
 </table>

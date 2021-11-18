@@ -53,7 +53,9 @@ namespace Obligatorio2.Controllers
         public IActionResult VerClientes()
         {
 
-            return View(s.GetClientes());
+            List<Usuario> ClientesOrdenados = s.GetClientes().OrderBy(cliente => cliente.apellido).ThenBy(cliente => cliente.nombre).ToList();
+
+            return View(ClientesOrdenados);
 
         }
 
