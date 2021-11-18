@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cloti\\OneDrive\\Documents\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj": {}
+    "C:\\Users\\cristian.poggi\\Source\\Repos\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cloti\\OneDrive\\Documents\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj": {
+    "C:\\Users\\cristian.poggi\\Source\\Repos\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cloti\\OneDrive\\Documents\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj",
+        "projectUniqueName": "C:\\Users\\cristian.poggi\\Source\\Repos\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj",
         "projectName": "Obligatorio2",
-        "projectPath": "C:\\Users\\cloti\\OneDrive\\Documents\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj",
-        "packagesPath": "C:\\Users\\cloti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cloti\\OneDrive\\Documents\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\obj\\",
+        "projectPath": "C:\\Users\\cristian.poggi\\Source\\Repos\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj",
+        "packagesPath": "C:\\Users\\cristian.poggi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cristian.poggi\\Source\\Repos\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\cloti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cristian.poggi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
