@@ -691,22 +691,22 @@ namespace Obligatorio2
             DateTime fechaConHora4 = new DateTime(2022, 8, 11, 0, 30, 0);
           
 
-            AltaActividad("Los Buitres ", ListaCategorias[2], fechaConHora, ListaLugares[7], Actividad.edad_minima.P, 1500);
+            
 
             //Deben ser 10 actividades 5 en lugares abiertos 
-            AltaActividad("Rockfest ", ListaCategorias[2], fechaConHora, ListaLugares[4], Actividad.edad_minima.C13,1000);
-            AltaActividad("Cuarteto de Nos ", ListaCategorias[2], fechaConHora2, ListaLugares[3], Actividad.edad_minima.C18, 6000);
-            AltaActividad("Pilsen Rock ", ListaCategorias[2], fechaConHora3, ListaLugares[4], Actividad.edad_minima.P, 3000);
-            AltaActividad("Gastro Open Air ", ListaCategorias[3], fechaConHora2, ListaLugares[2], Actividad.edad_minima.C13, 500);
-            AltaActividad("Jazz en el teatro ", ListaCategorias[2], fechaConHora4, ListaLugares[1], Actividad.edad_minima.P, 1000);
+            AltaActividad("Rockfest ", ListaCategorias[2], DateTime.Now.AddDays(15), ListaLugares[4], Actividad.edad_minima.C13,107);
+            AltaActividad("Cuarteto de Nos ", ListaCategorias[2], DateTime.Now.AddDays(10), ListaLugares[3], Actividad.edad_minima.C18, 603);
+            AltaActividad("Pilsen Rock ", ListaCategorias[2], DateTime.Now.AddDays(7), ListaLugares[4], Actividad.edad_minima.P, 3045);
+            AltaActividad("Gastro Open Air ", ListaCategorias[3], DateTime.Now.AddDays(3), ListaLugares[2], Actividad.edad_minima.C13, 500);
+            AltaActividad("Jazz en el teatro ", ListaCategorias[2], DateTime.Now.AddDays(1), ListaLugares[1], Actividad.edad_minima.P, 1000);
 
             // 5 en lugares cerrados
-            AltaActividad("The Stand Up Show ", ListaCategorias[1], fechaConHora3, ListaLugares[7], Actividad.edad_minima.C16, 4000);
-            AltaActividad("Sinfonica Uruguaya ", ListaCategorias[2], fechaConHora, ListaLugares[5], Actividad.edad_minima.P, 600);
-            AltaActividad("Rapido y Furioso 30 (Brian lives) ", ListaCategorias[0], fechaConHora4, ListaLugares[9], Actividad.edad_minima.P, 750);
-            AltaActividad("Semana de la Arepa ", ListaCategorias[3], fechaConHora, ListaLugares[6], Actividad.edad_minima.C16, 1200);
-            AltaActividad("TOC TOC ", ListaCategorias[1], fechaConHora3, ListaLugares[7], Actividad.edad_minima.P, 1500);
-
+            AltaActividad("The Stand Up Show ", ListaCategorias[1], DateTime.Now.AddDays(9), ListaLugares[7], Actividad.edad_minima.C16, 48);
+            AltaActividad("Sinfonica Uruguaya ", ListaCategorias[2], DateTime.Now.AddDays(20), ListaLugares[5], Actividad.edad_minima.P, 609);
+            AltaActividad("Rapido y Furioso 30 (Brian lives) ", ListaCategorias[0], DateTime.Now.AddDays(2), ListaLugares[9], Actividad.edad_minima.P, 2);
+            AltaActividad("Semana de la Arepa ", ListaCategorias[3], DateTime.Now.AddDays(3), ListaLugares[6], Actividad.edad_minima.C16, 1);
+            AltaActividad("TOC TOC ", ListaCategorias[1], DateTime.Now.AddDays(1), ListaLugares[7], Actividad.edad_minima.P, 15);
+            AltaActividad("Los Buitres ", ListaCategorias[2], DateTime.Now.AddDays(10), ListaLugares[7], Actividad.edad_minima.P, 1509);
           
 
 
@@ -717,15 +717,17 @@ namespace Obligatorio2
             DateTime fechaConHoraUsuario5 = new DateTime(1978, 2, 03, 0, 0, 0);
 
             //Alta Cliente
-            AltaUsuario("pedro", "Martinez", "pedroC@gmail.com", fechaConHoraUsuario1, "pedroC", "AAaa1234");
-            AltaUsuario("Romina", "Marrero", "rominaC@gmail.com", fechaConHoraUsuario3, "rominaC", "BBbb1234");
-            AltaUsuario("Agustin", "Rodriguez", "agustinC@gmail.com", fechaConHoraUsuario3, "agustinC", "CCcc1234");
-            AltaUsuario("Patricia", "Pereira", "rominaC@gmail.com", fechaConHoraUsuario3, "", "1543");
+            AltaUsuario("Bruno", "Borrelli", "Bruno@gmail.com", fechaConHoraUsuario1, "BruB", "A123456");
+            AltaUsuario("Franco", "Borrelli", "Franco@gmail.com", fechaConHoraUsuario1, "FranB", "A123456");
+            AltaUsuario("Cristian", "Poggi", "Cristian@gmail.com", fechaConHoraUsuario3, "CrisC", "A123456");
+            AltaUsuario("Clotilde", "Fernandez", "Clotilde@gmail.com", fechaConHoraUsuario3, "CloF", "A123456");
+            AltaUsuario("Agustina", "Fernandez", "Agustina@gmail.com", fechaConHoraUsuario3, "AgusF", "A123456");
 
             //Alta Operadores
-            Usuario operador1 = new Usuario("Pedro", "Suarez", fechaConHoraUsuario2, "pedroOP", "pedroOP@gmail.com", "AAaa123",Usuario.Roles.Operador);
-            Usuario operador2 = new Usuario("Andrea", "Gimenez", fechaConHoraUsuario1, "andreaOP", "andreOP@gmail.com", "AAaa123", Usuario.Roles.Operador);
+            Usuario operador1 = new Usuario("Joaquin", "Rodriguez", fechaConHoraUsuario2, "Admin1", "Joaquin@gmail.com", "A123456", Usuario.Roles.Operador);
+            Usuario operador2 = new Usuario("Rafael", "Cohen", fechaConHoraUsuario1, "Admin2", "Rafael@gmail.com", "A123456", Usuario.Roles.Operador);
             ListaUsuarios.Add(operador1);
+            ListaUsuarios.Add(operador2);
         }
 
     }
