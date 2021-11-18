@@ -279,7 +279,7 @@ namespace Obligatorio2
         {
             bool resu = true;
 
-            if (!pass.Any(char.IsUpper) && !pass.Any(char.IsLower) && !pass.Any(char.IsDigit))
+            if (!pass.Any(char.IsUpper) || !pass.Any(char.IsLower) || !pass.Any(char.IsDigit))
             {
                 resu = false;
             }
@@ -612,7 +612,7 @@ namespace Obligatorio2
         {
             bool eliminado = false;
 
-           for(int i = 0; i < ListaCompras.Count; i++)
+            for (int i = 0; i < ListaCompras.Count; i++)
             {
                 if (ListaCompras[i].ID_compra.Equals(id))
                 {
@@ -623,7 +623,6 @@ namespace Obligatorio2
             return eliminado;
 
         }
-
 
 
 
@@ -716,27 +715,27 @@ namespace Obligatorio2
             DateTime fechaConHoraUsuario5 = new DateTime(1978, 2, 03, 0, 0, 0);
 
             //Alta Cliente
-            AltaUsuario("Bruno", "Borrelli", "Bruno@gmail.com", fechaConHoraUsuario1, "BruB", "A123456");
-            AltaUsuario("Franco", "Borrelli", "Franco@gmail.com", fechaConHoraUsuario1, "FranB", "A123456");
-            AltaUsuario("Cristian", "Poggi", "Cristian@gmail.com", fechaConHoraUsuario3, "CrisC", "A123456");
-            AltaUsuario("Clotilde", "Fernandez", "Clotilde@gmail.com", fechaConHoraUsuario3, "CloF", "A123456");
-            AltaUsuario("Agustina", "Fernandez", "Agustina@gmail.com", fechaConHoraUsuario3, "AgusF", "A123456");
+            AltaUsuario("Bruno", "Borrelli", "Bruno@gmail.com", fechaConHoraUsuario1, "BruB", "Ab123456");
+            AltaUsuario("Franco", "Borrelli", "Franco@gmail.com", fechaConHoraUsuario1, "FranB", "Ab123456");
+            AltaUsuario("Cristian", "Poggi", "Cristian@gmail.com", fechaConHoraUsuario3, "CrisC", "Ab123456");
+            AltaUsuario("Clotilde", "Fernandez", "Clotilde@gmail.com", fechaConHoraUsuario3, "CloF", "Ab123456");
+            AltaUsuario("Agustina", "Fernandez", "Agustina@gmail.com", fechaConHoraUsuario3, "AgusF", "Ab123456");
 
             //Alta Operadores
-            Usuario operador1 = new Usuario("Joaquin", "Rodriguez", fechaConHoraUsuario2, "Admin1", "Joaquin@gmail.com", "A123456", Usuario.Roles.Operador);
-            Usuario operador2 = new Usuario("Rafael", "Cohen", fechaConHoraUsuario1, "Admin2", "Rafael@gmail.com", "A123456", Usuario.Roles.Operador);
+            Usuario operador1 = new Usuario("Joaquin", "Rodriguez", fechaConHoraUsuario2, "Admin1", "Joaquin@gmail.com", "Ab123456", Usuario.Roles.Operador);
+            Usuario operador2 = new Usuario("Rafael", "Cohen", fechaConHoraUsuario1, "Admin2", "Rafael@gmail.com", "Ab123456", Usuario.Roles.Operador);
             ListaUsuarios.Add(operador1);
             ListaUsuarios.Add(operador2);
 
             //Alta Compras
-            //AltaCompra(ListaActividades[1], 2, ListaUsuarios[1], DateTime.Today);
-            //AltaCompra(ListaActividades[3], 2, ListaUsuarios[2], DateTime.Today);
-            //AltaCompra(ListaActividades[4], 2, ListaUsuarios[2], DateTime.Today);
-            //AltaCompra(ListaActividades[7], 2, ListaUsuarios[2], DateTime.Today);
-            //AltaCompra(ListaActividades[2], 2, ListaUsuarios[3], DateTime.Today);
-            //AltaCompra(ListaActividades[9], 2, ListaUsuarios[3], DateTime.Today);
-            //AltaCompra(ListaActividades[8], 2, ListaUsuarios[4], DateTime.Today);
-            //AltaCompra(ListaActividades[7], 2, ListaUsuarios[4], DateTime.Today);
+            AltaCompra(ListaActividades[1], 2, ListaUsuarios[1], DateTime.Today);
+            AltaCompra(ListaActividades[3], 2, ListaUsuarios[2], DateTime.Today);
+            AltaCompra(ListaActividades[4], 2, ListaUsuarios[2], DateTime.Today);
+            AltaCompra(ListaActividades[7], 2, ListaUsuarios[2], DateTime.Today);
+            AltaCompra(ListaActividades[2], 2, ListaUsuarios[3], DateTime.Today);
+            AltaCompra(ListaActividades[9], 2, ListaUsuarios[3], DateTime.Today);
+            AltaCompra(ListaActividades[8], 2, ListaUsuarios[4], DateTime.Today);
+            AltaCompra(ListaActividades[7], 2, ListaUsuarios[4], DateTime.Today);
         }
 
     }

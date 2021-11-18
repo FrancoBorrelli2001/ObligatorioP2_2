@@ -59,9 +59,6 @@ namespace Obligatorio2.Controllers
             return View(compras);
         }
 
-       
-
-
 
         public IActionResult Registro()
         {
@@ -102,11 +99,7 @@ namespace Obligatorio2.Controllers
         public IActionResult CancelarCompra(int IdCompra, string n)
         {
             s.CancelarCompra(IdCompra);
-            return RedirectToAction("VerComprasACancelar", new
-            {
-                ListaCompras = s.ObtenerComprasACancelar()
-
-            }) ;
+            return RedirectToAction("VerCompras");
 
         }
 

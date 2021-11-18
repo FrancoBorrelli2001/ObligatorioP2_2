@@ -108,8 +108,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Precio_Final)
                 </td>
+                <td>
+                    @Html.ActionLink("Cancelar Compra", "CancelarCompra", new { id = item.ID_compra })
+                </td>
             </tr>
         }
     </tbody>
 </table>
-<h6><a asp-action="VerComprasACancelar">Cancelar Compras</a></h6>
+@*<h6><a asp-action="VerComprasACancelar">Cancelar Compras</a></h6>*@

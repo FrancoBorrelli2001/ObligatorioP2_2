@@ -1,86 +1,97 @@
 ﻿
-<h1>Ver compras realizadas entre dos fechas</h1>
-<br />
-<form method="post">
-    <label>Fecha de inicio</label><br />
-    <input type="date" name="fecha1" /><br />
-    <label>Fecha final</label><br />
-    <input type="date" name="fecha2" /><br />
-    <hr />
-    <input type="submit" value="Mostrar" />
-</form>
+<h4>Ver compras realizadas entre dos fechas</h4>
+<hr />
 
-@if (@ViewBag.LC != null)
-{
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label class="control-label">Fecha de inicio</label>
+                <input type="date" name="fecha1" class="form-control" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Fecha final</label>
+                <input type="date" name="fecha2" class="form-control" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Mostrar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
 
-    @if (ViewBag.LC.Count == 0)
+    @if (@ViewBag.LC != null)
     {
-                    <h3>No existen Compras entre las fechas @ViewBag.Fecha1 y @ViewBag.Fecha2</h3>
+        @if (ViewBag.LC.Count == 0)
+        {
+            <h5>No existen compras en el rango de fechas seleccionado.</h5>
+        }
+        else
+        {
+            <hr />
+            <h4>Lista de Compras</h4>
+
+            <table class="table">
+                <thead class="text-center">
+                    <tr>
+                        <th>
+                            ID Compra
+                        </th>
+                        <th>
+                            Nombre de la Actividad
+                        </th>
+                        <th>
+                            Cantidad de Entradas
+                        </th>
+                        <th>
+                            Nombre de Usuario
+                        </th>
+                        <th>
+                            Fecha y Hora de la compra
+                        </th>
+                        <th>
+                            Estado
+                        </th>
+                        <th>
+                            Precio Final
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    @foreach (var compra in @ViewBag.LC)
+                    {
+                        var PrecioFinal = compra.CalcularPrecioFinal();
+                        <tr>
+                            <td>
+                                @compra.ID_compra
+                            </td>
+                            <td>
+                                @compra.actividad.Nombre
+                            </td>
+                            <td>
+                                @compra.cant_Entradas
+                            </td>
+                            <td>
+                                @compra.usuario.nombre
+                            </td>
+                            <td>
+                                @compra.fecha_hora_compra
+                            </td>
+                            <td>
+                                @compra.estado
+                            </td>
+                            <td>
+                                @compra.Precio_Final
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <br />
+            <h5>El precio total de todas las compras es @ViewBag.PrecioTotal</h5>
+            <hr />
+        }
     }
-    else
-    {
-    <h1>Lista de Compras</h1>
-
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    ID Compra
-                </th>
-                <th>
-                    Nombre de la Actividad
-                </th>
-                <th>
-                    Cantidad de Entradas
-                </th>
-                <th>
-                    Nombre de Usuario
-                </th>
-                <th>
-                    Fecha y Hora de la compra
-                </th>
-                <th>
-                    Estado
-                </th>
-                <th>
-                    Precio Final
-                </th>
-
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var compra in @ViewBag.LC)
-            {
-                var PrecioFinal = compra.CalcularPrecioFinal();
-                <tr>
-                    <td>
-                        @compra.ID_compra
-                    </td>
-                    <td>
-                        @compra.actividad.Nombre
-                    </td>
-                    <td>
-                        @compra.cant_Entradas
-                    </td>
-                    <td>
-                        @compra.usuario.nombre
-                    </td>
-                    <td>
-                        @compra.fecha_hora_compra
-                    </td>
-                    <td>
-                        @compra.estado
-                    </td>
-                    <td>
-                        @compra.Precio_Final
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-    <br />
-    <h3>El precio total de todas las compras en @ViewBag.PrecioTotal</h3>
-    <hr />
-    }
-}

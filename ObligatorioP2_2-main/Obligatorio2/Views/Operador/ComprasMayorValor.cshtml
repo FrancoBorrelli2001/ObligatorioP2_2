@@ -4,11 +4,11 @@
     ViewData["Title"] = "ComprasMayorValor";
 }
 
-<h1>La/Las compras de mayor valor es</h1>
+<h4>Compras de mayor valor</h4>
 
 
 <table class="table">
-    <thead>
+    <thead class="text-center">
         <tr>
             <th>
                 ID Compra
@@ -17,7 +17,7 @@
                 Cantidad de Entradas
             </th>
             <th>
-               Fecha y Hora de la Compra
+                Fecha y Hora
             </th>
             <th>
                 Estado
@@ -28,27 +28,28 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
-@foreach (var item in Model) {
-    
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ID_compra)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cant_Entradas)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fecha_hora_compra)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.estado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precio_Final)
-            </td>
-        
-        </tr>
-}
+    <tbody class="text-center">
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_compra)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cant_Entradas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_hora_compra)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio_Final)
+                </td>
+
+            </tr>
+        }
     </tbody>
 </table>
