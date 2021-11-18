@@ -73,7 +73,7 @@ namespace Obligatorio2.Controllers
         public IActionResult Registro(string nombre,string apellido,string email,DateTime fechaNacimiento,string nombreUsuario,string password)
         {
             Usuario u = s.AltaUsuario(nombre, apellido,email,fechaNacimiento, nombreUsuario,password);
-            if (u != null)
+            if (u == null)
             {
                 ViewBag.msg="Error en el registro, verifique los datos ingresados";
             }

@@ -608,7 +608,7 @@ namespace Obligatorio2
 
         }
 
-
+        //Elimina la compra
         internal bool CancelarCompra(int id)
         {
             bool eliminado = false;
@@ -689,9 +689,9 @@ namespace Obligatorio2
             DateTime fechaConHora2 = new DateTime(2023, 5, 12, 0, 0, 0);
             DateTime fechaConHora3 = new DateTime(2024, 6, 07, 0, 00, 0);
             DateTime fechaConHora4 = new DateTime(2022, 8, 11, 0, 30, 0);
-            DateTime MenosDe24hs = new DateTime(2021, 11, 14, 0, 30, 0);
+          
 
-            AltaActividad("Los Buitres ", ListaCategorias[2], MenosDe24hs, ListaLugares[7], Actividad.edad_minima.P, 1500);
+            AltaActividad("Los Buitres ", ListaCategorias[2], fechaConHora, ListaLugares[7], Actividad.edad_minima.P, 1500);
 
             //Deben ser 10 actividades 5 en lugares abiertos 
             AltaActividad("Rockfest ", ListaCategorias[2], fechaConHora, ListaLugares[4], Actividad.edad_minima.C13,1000);
@@ -706,13 +706,25 @@ namespace Obligatorio2
             AltaActividad("Rapido y Furioso 30 (Brian lives) ", ListaCategorias[0], fechaConHora4, ListaLugares[9], Actividad.edad_minima.P, 750);
             AltaActividad("Semana de la Arepa ", ListaCategorias[3], fechaConHora, ListaLugares[6], Actividad.edad_minima.C16, 1200);
             AltaActividad("TOC TOC ", ListaCategorias[1], fechaConHora3, ListaLugares[7], Actividad.edad_minima.P, 1500);
-   
+
+          
+
 
             DateTime fechaConHoraUsuario1 = new DateTime(1999, 8, 11, 0, 0, 0);
             DateTime fechaConHoraUsuario2 = new DateTime(1989, 8, 09, 0, 0, 0);
+            DateTime fechaConHoraUsuario3 = new DateTime(2001, 4, 12, 0, 0, 0);
+            DateTime fechaConHoraUsuario4 = new DateTime(2012, 3, 08, 0, 0, 0);
+            DateTime fechaConHoraUsuario5 = new DateTime(1978, 2, 03, 0, 0, 0);
 
-            AltaUsuario("pedro", "martinez", "pedro@gmail.com", fechaConHoraUsuario1, "a", "AAaa123");
-            Usuario operador1 = new Usuario("Pedro", "Suarez", fechaConHoraUsuario2, "operador1", "pedroOP@gmail.com", "AAaa123",Usuario.Roles.Operador);
+            //Alta Cliente
+            AltaUsuario("pedro", "Martinez", "pedroC@gmail.com", fechaConHoraUsuario1, "pedroC", "AAaa1234");
+            AltaUsuario("Romina", "Marrero", "rominaC@gmail.com", fechaConHoraUsuario3, "rominaC", "BBbb1234");
+            AltaUsuario("Agustin", "Rodriguez", "agustinC@gmail.com", fechaConHoraUsuario3, "agustinC", "CCcc1234");
+            AltaUsuario("Patricia", "Pereira", "rominaC@gmail.com", fechaConHoraUsuario3, "", "1543");
+
+            //Alta Operadores
+            Usuario operador1 = new Usuario("Pedro", "Suarez", fechaConHoraUsuario2, "pedroOP", "pedroOP@gmail.com", "AAaa123",Usuario.Roles.Operador);
+            Usuario operador2 = new Usuario("Andrea", "Gimenez", fechaConHoraUsuario1, "andreaOP", "andreOP@gmail.com", "AAaa123", Usuario.Roles.Operador);
             ListaUsuarios.Add(operador1);
         }
 
