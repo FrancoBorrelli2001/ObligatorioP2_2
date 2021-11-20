@@ -1,62 +1,40 @@
-﻿<!-- #region codigo anterior -->
-@*<h1>Registro</h1>
-    <form method="post">
-        <label>Nombre</label>
-        <input type="text" name="nombre" required="" /><br />
-        <label>Apellido</label>
-        <input type="text" name="apellido" /><br />
-        <label>Email</label>
-        <input type="text" name="email" /><br />
-        <label>Fecha de Nacimiento</label>
-        <input type="date" name="fechaNacimiento" /><br />
-        <label>Nombre Usuario</label>
-        <input type="text" name="nombreUsuario" /><br />
-        <label>Password</label>
-        <input type="text" name="password" /><br />
-        <input type="submit" value="Registrarse" />
-    </form>
-    <a asp-action="Login">Volver</a>
-    <p>@ViewBag.msg</p>*@
-
-<!-- #endregion Page Header -->
-
-<h4>Registro</h4>
+﻿<h4>Registro</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div class="form-group">
                 <label class="control-label">Nombre</label>
-                <input type="text" name="nombre" class="form-control" required/>
+                <input type="text" name="nombre" class="form-control" required />
                 <span class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">Apellido</label>
-                <input type="text" name="apellido" class="form-control" required/>
+                <input type="text" name="apellido" class="form-control" required />
                 <span class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">Email</label>
-                <input type="email" name="email" class="form-control" required/>
+                <input type="email" name="email" class="form-control" required />
                 <span class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">Fecha de Nacimiento</label>
-                <input type="date" name="fechaNacimiento" class="form-control" required/>
+                <input type="date" name="fechaNacimiento" class="form-control" required />
                 <span class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">Nombre de Usuario</label>
-                <input type="text" name="nombreUsuario" class="form-control" required/>
+                <input type="text" name="nombreUsuario" class="form-control" required />
                 <span class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">Contraseña</label>
-                <input type="password" name="password" class="form-control" required/>
+                <input type="password" name="password" class="form-control" required />
                 <span class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Registrarse" class="btn btn-primary"/>
+                <input type="submit" value="Registrarse" class="btn btn-primary" />
             </div>
         </form>
     </div>

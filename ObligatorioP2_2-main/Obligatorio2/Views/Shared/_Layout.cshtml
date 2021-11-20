@@ -29,7 +29,7 @@
                         </li>
 
 
-                        @* Muestro las opciones para el usuario sin identificar *@
+                        @* Opciones para usuarios sin identificar *@
                         @if (Context.Session.GetString("RolLogueado") == null)
                         {
 
@@ -40,7 +40,7 @@
                         }
                         else
                         {
-                            @* Muestro las opciones para el usuario Cliente  *@
+                            @* Opciones para usuarios Cliente *@
                             @if (Context.Session.GetString("RolLogueado") == "Cliente")
                             {
 
@@ -54,6 +54,7 @@
                             }
                             else
                             {
+                                @* Opciones para usuarios Operador *@
                                 @if (Context.Session.GetString("RolLogueado") == "Operador")
                                 {
                                     <li class="nav-item">
@@ -61,7 +62,7 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a class="nav-link text-dark" asp-area="" asp-controller="Operador" asp-action="VerComprasEntreFechas">Compras entre dos Fechas</a>
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Operador" asp-action="VerComprasEntreFechas">Compras entre fechas</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -72,16 +73,11 @@
                                         <a class="nav-link text-dark" asp-area="" asp-controller="Operador" asp-action="Otros">Otras Funciones</a>
                                     </li>
 
-
                                     <li class="nav-item">
                                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">Cerrar Sesion</a>
                                     </li>
-
                                 }
-
-
                             }
-
                         }
                     </ul>
                 </div>
