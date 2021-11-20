@@ -1,25 +1,4 @@
-﻿<!-- #region codigo anterior -->
-@*<h1>Datos de la compra a eliminar</h1>
-
-    <form method="post">
-        <label>ID Compra</label>
-        <input type="text" name="IdCompra" value="@ViewBag.compra.ID_compra" readonly /><br />
-        <label>Nombre de la Actividad</label>
-        <input type="text" name="nombreActividad" value="@ViewBag.compra.actividad.Nombre" readonly /><br />
-        <label>Cantidad de entradas</label>
-        <input type="text" name="cantEntradas" value="@ViewBag.compra.cant_Entradas" readonly /><br />
-        <label>Fecha y hora</label>
-        <input type="datetime" name="fechaHora" value="@ViewBag.compra.fecha_hora_compra" readonly /><br />
-        <label>Precio</label>
-        <input type="text" name="Precio" value="@ViewBag.compra.Precio_Final" readonly />
-        <hr />
-        <h2>Seguro que desea cancelar la compra?</h2><br />
-        <input type="submit" value="Si" /><br />
-        <a asp-action="VerComprasACancelar">Volver</a>
-    </form>*@
-<!-- #endregion Page Header -->
-
-<h4>Datos de la compra a eliminar</h4>
+﻿<h4>Datos de la compra a eliminar</h4>
 <hr />
 
 <div class="row">
@@ -54,7 +33,6 @@
             <div class="form-group">
                 <h6>Seguro que desea cancelar la compra?</h6>
                 <input type="submit" value="Si" class="btn btn-danger" /><br /><br />
-
             </div>
         </form>
     </div>

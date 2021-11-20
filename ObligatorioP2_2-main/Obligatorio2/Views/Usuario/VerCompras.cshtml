@@ -1,65 +1,6 @@
 ﻿@model IEnumerable<Obligatorio2.Compra>
 @using Microsoft.AspNetCore.Http;
 
-<!-- #region Page Header -->
-@*<h1>Compras del cliente @Context.Session.GetString("NombreLogueado")</h1>
-    <hr />
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    ID Compra
-                </th>
-                <th>
-                    Cantidad de Entradas
-                </th>
-
-                <th>
-                    Fecha y Hora de la Compra
-                </th>
-                <th>
-                    Estado
-                </th>
-                <th>
-                    Precio Final
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ID_compra)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.cant_Entradas)
-                    </td>
-
-                    <td>
-                        @Html.DisplayFor(modelItem => item.fecha_hora_compra)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.estado)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Precio_Final)
-                    </td>
-                </tr>
-            }
-
-        </tbody>
-
-
-        <hr />
-
-    </table>
-    <h4><a asp-action="VerComprasACancelar">Cancelar Compras</a></h4>*@
-
-<!-- #endregion Page Header -->
-
 <h4>Tus compras</h4>
 <br />
 <table class="table">

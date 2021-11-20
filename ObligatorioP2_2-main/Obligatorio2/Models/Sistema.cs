@@ -668,14 +668,14 @@ namespace Obligatorio2
             ListaUsuarios.Add(operador2);
 
             //Compras
-            AltaCompra(ListaActividades[1], 2, ListaUsuarios[1], DateTime.Today);
-            AltaCompra(ListaActividades[3], 2, ListaUsuarios[2], DateTime.Today);
-            AltaCompra(ListaActividades[4], 2, ListaUsuarios[2], DateTime.Today);
-            AltaCompra(ListaActividades[7], 2, ListaUsuarios[2], DateTime.Today);
-            AltaCompra(ListaActividades[2], 2, ListaUsuarios[3], DateTime.Today);
-            AltaCompra(ListaActividades[9], 2, ListaUsuarios[3], DateTime.Today);
-            AltaCompra(ListaActividades[8], 2, ListaUsuarios[4], DateTime.Today);
-            AltaCompra(ListaActividades[7], 2, ListaUsuarios[4], DateTime.Today);
+            AltaCompra(ListaActividades[1], 2, ListaUsuarios[1], DateTime.Now.AddDays(-2));
+            AltaCompra(ListaActividades[3], 2, ListaUsuarios[2], DateTime.Now.AddDays(-7));
+            AltaCompra(ListaActividades[4], 2, ListaUsuarios[2], DateTime.Now.AddDays(-4));
+            AltaCompra(ListaActividades[7], 2, ListaUsuarios[2], DateTime.Now.AddDays(-8));
+            AltaCompra(ListaActividades[2], 2, ListaUsuarios[3], DateTime.Now.AddDays(-3));
+            AltaCompra(ListaActividades[9], 2, ListaUsuarios[3], DateTime.Now);
+            AltaCompra(ListaActividades[8], 2, ListaUsuarios[4], DateTime.Now);
+            AltaCompra(ListaActividades[7], 2, ListaUsuarios[4], DateTime.Now);
         }
     }
 }
