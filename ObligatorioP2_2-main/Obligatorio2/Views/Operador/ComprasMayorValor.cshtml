@@ -14,6 +14,12 @@
                 ID Compra
             </th>
             <th>
+                Usuario
+            </th>
+            <th>
+                Actividad
+            </th>
+            <th>
                 Cantidad de Entradas
             </th>
             <th>
@@ -31,10 +37,15 @@
     <tbody class="text-center">
         @foreach (var item in Model)
         {
-
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.ID_compra)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.usuario.nombreUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.actividad.Nombre)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.cant_Entradas)
