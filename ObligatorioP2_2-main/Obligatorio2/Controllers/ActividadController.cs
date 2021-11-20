@@ -11,40 +11,38 @@ namespace Obligatorio2.Controllers
     public class ActividadController : Controller
     {
         Sistema s = Sistema.GetInstancia();
+
         public IActionResult Index()
         {
             return View();
         }
-      public IActionResult List()
+
+        public IActionResult List()
         {
-            
             List<Actividad> Actividades = s.GetActividades();
             return View(Actividades);
         }
-
 
         public IActionResult MeGusta(int id)
         {
             s.DarMG(id);
             return RedirectToAction("List");
-
-
         }
+
         public IActionResult Comprar(int id, string? msg)
         {
-            ViewBag.Actividad= s.BuscarActividad(id);
+            ViewBag.Actividad = s.BuscarActividad(id);
             ViewBag.IdActividad = id;
             ViewBag.msg = msg;
             return View();
         }
 
 
-       [HttpPost]
-
-       public IActionResult Comprar(int idActividad,int cantEntradas)
+        [HttpPost]
+        public IActionResult Comprar(int idActividad, int cantEntradas)
         {
             Actividad act = s.BuscarActividad(idActividad);
-            
+
             int? idUsuarioLogueado = HttpContext.Session.GetInt32("IdLogueado");
             Usuario usu = s.BuscarUsuario(idUsuarioLogueado);
             DateTime FechaHoraActual = DateTime.Now;
@@ -66,17 +64,8 @@ namespace Obligatorio2.Controllers
                 {
                     id = idActividad,
                     msg = "ERROR",
-
                 });
             }
         }
-       
-     
-     
-
     }
-
-
-
-  
 }

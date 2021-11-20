@@ -14,7 +14,6 @@ namespace Obligatorio2.Controllers
 
         Sistema s = Sistema.GetInstancia();
 
-
         public IActionResult Index()
         {
             return View();
@@ -24,7 +23,6 @@ namespace Obligatorio2.Controllers
         {
             return View();
         }
-
 
         [HttpPost]
         public IActionResult Logout(string n)
@@ -37,6 +35,7 @@ namespace Obligatorio2.Controllers
         {
             return View();
         }
+
 
         [HttpPost]
         public IActionResult VerComprasEntreFechas(DateTime fecha1, DateTime fecha2)
@@ -52,19 +51,14 @@ namespace Obligatorio2.Controllers
 
         public IActionResult VerClientes()
         {
-
             List<Usuario> ClientesOrdenados = s.GetClientes().OrderBy(cliente => cliente.apellido).ThenBy(cliente => cliente.nombre).ToList();
-
             return View(ClientesOrdenados);
-
         }
-
 
         public IActionResult Estadisticas()
         {
             return View();
         }
-
 
         public IActionResult ListarActividadesSegunLugar()
         {
@@ -81,7 +75,6 @@ namespace Obligatorio2.Controllers
             return View();
         }
 
-
         public IActionResult VerActividadesEntreFechasYCategoria()
         {
             ViewBag.Categorias = s.GetCategorias();
@@ -89,7 +82,6 @@ namespace Obligatorio2.Controllers
         }
 
         [HttpPost]
-
         public IActionResult VerActividadesEntreFechasYCategoria(DateTime fecha1, DateTime fecha2, string nombreCategoria)
         {
             ViewBag.Categorias = s.GetCategorias();
@@ -105,7 +97,6 @@ namespace Obligatorio2.Controllers
         {
             List<Compra> resu = s.ObtenerComprasMayorValor();
             return View(resu);
-
         }
 
         public IActionResult Otros()
@@ -113,17 +104,15 @@ namespace Obligatorio2.Controllers
             return View();
         }
 
-
         public IActionResult CambiarPrecioBaseActividades()
         {
             ViewBag.PrecioBaseActual = s.GetPrecioBaseActividad();
             return View();
         }
-        [HttpPost]
 
+        [HttpPost]
         public IActionResult CambiarPrecioBaseActividades(double nuevoPrecio)
         {
-
             if (s.SetPrecioBaseActividad(nuevoPrecio))
             {
                 ViewBag.msg = "Cambio Realizado";
@@ -142,11 +131,9 @@ namespace Obligatorio2.Controllers
         {
             ViewBag.AforoActual = s.GetAforoMaximo();
             return View();
-
         }
 
         [HttpPost]
-
         public IActionResult CambiarAforoMaximo(int nuevoAforo)
         {
             if (s.SetAforoMaximo(nuevoAforo))
@@ -167,11 +154,9 @@ namespace Obligatorio2.Controllers
         {
             ViewBag.PrecioButacasActual = s.GetPrecioButacas();
             return View();
-
         }
 
         [HttpPost]
-
         public IActionResult CambiarPrecioButacas(double nuevoPrecio)
         {
             if (s.SetPrecioButacas(nuevoPrecio))
@@ -185,9 +170,5 @@ namespace Obligatorio2.Controllers
             ViewBag.PrecioButacasActual = s.GetPrecioButacas();
             return View();
         }
-
-
-
-
     }
 }

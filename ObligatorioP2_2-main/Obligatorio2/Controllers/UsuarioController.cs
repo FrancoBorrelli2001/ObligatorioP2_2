@@ -12,10 +12,12 @@ namespace Obligatorio2.Controllers
     public class UsuarioController : Controller
     {
         Sistema s = Sistema.GetInstancia();
+
         public IActionResult Index()
         {
             return View();
         }
+
         public IActionResult Login()
         {
             return View();
@@ -27,7 +29,7 @@ namespace Obligatorio2.Controllers
             Usuario buscado = s.LoginUsuario(nombreUsuario, password);
             if (buscado != null)
             {
-                //CREO VARIABLES DE SESION 
+                //Creacion de variables de sesion
                 HttpContext.Session.SetString("NombreLogueado", buscado.nombre);
                 if (buscado.rol == Usuario.Roles.Cliente)
                 {
@@ -46,8 +48,6 @@ namespace Obligatorio2.Controllers
                 ViewBag.msg = "El usuario no existe en el sistema";
                 return View();
             }
-
-
         }
 
 
@@ -66,18 +66,16 @@ namespace Obligatorio2.Controllers
         }
 
         [HttpPost]
-
-        public IActionResult Registro(string nombre,string apellido,string email,DateTime fechaNacimiento,string nombreUsuario,string password)
+        public IActionResult Registro(string nombre, string apellido, string email, DateTime fechaNacimiento, string nombreUsuario, string password)
         {
-            Usuario u = s.AltaUsuario(nombre, apellido,email,fechaNacimiento, nombreUsuario,password);
+            Usuario u = s.AltaUsuario(nombre, apellido, email, fechaNacimiento, nombreUsuario, password);
             if (u == null)
             {
-                ViewBag.msg="Error en el registro, verifique los datos ingresados";
+                ViewBag.msg = "Error en el registro, verifique los datos ingresados";
             }
             else
             {
                 ViewBag.msg = "Registro exitoso!";
-
             }
             return View();
         }
@@ -88,22 +86,17 @@ namespace Obligatorio2.Controllers
             return View(ComprasCancelar);
         }
 
-    public IActionResult CancelarCompra(int id)
+        public IActionResult CancelarCompra(int id)
         {
             ViewBag.compra = s.BuscarCompra(id);
             return View();
         }
 
         [HttpPost]
-
         public IActionResult CancelarCompra(int IdCompra, string n)
         {
             s.CancelarCompra(IdCompra);
             return RedirectToAction("VerCompras");
-
         }
-
     }
-
-
 }
