@@ -657,7 +657,8 @@ namespace Obligatorio2
             //Clientes
             AltaUsuario("Bruno", "Borrelli", "Bruno@gmail.com", fechaConHoraUsuario1, "BruB", "Ab123456");
             AltaUsuario("Franco", "Borrelli", "Franco@gmail.com", fechaConHoraUsuario1, "FranB", "Ab123456");
-            AltaUsuario("Cristian", "Poggi", "Cristian@gmail.com", fechaConHoraUsuario3, "CrisC", "Ab123456");
+            AltaUsuario("Cristian", "Poggi", "Cristian@gmail.com", fechaConHoraUsuario3, "CrisP", "Ab123456");
+            AltaUsuario("Carla", "Poggi", "Carla@gmail.com", fechaConHoraUsuario3, "CarlP", "Ab123456");
             AltaUsuario("Clotilde", "Fernandez", "Clotilde@gmail.com", fechaConHoraUsuario3, "CloF", "Ab123456");
             AltaUsuario("Agustina", "Fernandez", "Agustina@gmail.com", fechaConHoraUsuario3, "AgusF", "Ab123456");
 
