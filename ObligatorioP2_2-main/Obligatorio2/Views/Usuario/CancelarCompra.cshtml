@@ -1,39 +1,49 @@
-﻿<h4>Datos de la compra a eliminar</h4>
-<hr />
-
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div class="form-group">
-                <label class="control-label">ID Compra</label>
-                <input type="text" name="IdCompra" value="@ViewBag.compra.ID_compra" readonly class="form-control" />
-                <span class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Nombre de la Actividad</label>
-                <input type="text" name="nombreActividad" value="@ViewBag.compra.actividad.Nombre" readonly class="form-control" />
-                <span class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Cantidad de entradas</label>
-                <input type="text" name="cantEntradas" value="@ViewBag.compra.cant_Entradas" readonly class="form-control" />
-                <span class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Fecha y hora</label>
-                <input type="text" name="fechaHora" value="@ViewBag.compra.fecha_hora_compra" readonly class="form-control" />
-                <span class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Precio</label>
-                <input type="text" name="Precio" value="@ViewBag.compra.Precio_Final" readonly class="form-control" />
-                <span class="text-danger"></span>
-            </div>
-            <hr />
-            <div class="form-group">
-                <h6>Seguro que desea cancelar la compra?</h6>
-                <input type="submit" value="Si" class="btn btn-danger" /><br /><br />
-            </div>
-        </form>
+﻿
+@if (ViewBag.compra == null)
+{
+    <h1>@ViewBag.msg</h1>
+    <a asp-action="VerCompras">Volver</a>
+}
+else
+{
+    <h4>Datos de la compra a eliminar</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div class="form-group">
+                    <label class="control-label">ID Compra</label>
+                    <input type="text" name="IdCompra" value="@ViewBag.compra.ID_compra" readonly class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Nombre de la Actividad</label>
+                    <input type="text" name="nombreActividad" value="@ViewBag.compra.actividad.Nombre" readonly class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Cantidad de entradas</label>
+                    <input type="text" name="cantEntradas" value="@ViewBag.compra.cant_Entradas" readonly class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Fecha y hora</label>
+                    <input type="text" name="fechaHora" value="@ViewBag.compra.fecha_hora_compra" readonly class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Precio</label>
+                    <input type="text" name="Precio" value="@ViewBag.compra.Precio_Final" readonly class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <h6>Seguro que desea cancelar la compra?</h6>
+                    <input type="submit" value="Si" class="btn btn-danger" /><br /><br />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
+
+    <a asp-action="VerCompras">Volver</a>
+}

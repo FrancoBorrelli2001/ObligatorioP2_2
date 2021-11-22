@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cloti\\OneDrive\\Documents\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj": {}
+    "D:\\Documentos\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cloti\\OneDrive\\Documents\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj": {
+    "D:\\Documentos\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cloti\\OneDrive\\Documents\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj",
+        "projectUniqueName": "D:\\Documentos\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj",
         "projectName": "Obligatorio2",
-        "projectPath": "C:\\Users\\cloti\\OneDrive\\Documents\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj",
-        "packagesPath": "C:\\Users\\cloti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cloti\\OneDrive\\Documents\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\obj\\",
+        "projectPath": "D:\\Documentos\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\Obligatorio2.csproj",
+        "packagesPath": "C:\\Users\\Franco\\.nuget\\packages\\",
+        "outputPath": "D:\\Documentos\\GitHub\\ObligatorioP2_2\\ObligatorioP2_2-main\\Obligatorio2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\cloti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Franco\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

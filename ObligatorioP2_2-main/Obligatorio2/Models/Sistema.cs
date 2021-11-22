@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Linq;
 
 namespace Obligatorio2
 {
@@ -216,6 +217,7 @@ namespace Obligatorio2
             //Contraseña con mas de 6 caracteres
             if (password.Length <= 6) { OK = false; }
 
+
             //Validamos que la fecha de nacimiento sea anterior a la actual
             if (fechaNacimiento > DateTime.Now) { OK = false; }
 
@@ -323,21 +325,7 @@ namespace Obligatorio2
             return resu;
         }
 
-        //Obtener compras a cancelar
-        internal List<Compra> ObtenerComprasACancelar()
-        {
-            List<Compra> resu = new List<Compra>();
-            foreach (Compra com in ListaCompras)
-            {
-                var hours = (com.actividad.Fecha_y_hora - DateTime.Now).TotalHours;
-                //Solo agregra las actividades que tienen una diferencia de 24 horas
-                if (hours > 24)
-                {
-                    resu.Add(com);
-                }
-            }
-            return resu;
-        }
+       
 
         internal void DarMG(int id)
         {
@@ -561,6 +549,30 @@ namespace Obligatorio2
             }
             return resu;
         }
+        //Busca la compra a cancelar
+        internal Compra BuscarCompraACancelar(int? id)
+        {
+
+
+            Compra resu = null;
+            foreach (Compra com in ListaCompras)
+            {
+
+                var hours = (com.actividad.Fecha_y_hora - DateTime.Now).TotalHours;
+                //Verifico que la actividad tienen una diferencia de mas de 24 horas
+                if (hours > 24)
+                {
+                    if (com.ID_compra.Equals(id))
+                    {
+                        resu = com;
+                    }
+                }
+
+
+               
+            }
+            return resu;
+        }
 
         //Elimina la compra
         internal bool CancelarCompra(int id)
@@ -647,6 +659,8 @@ namespace Obligatorio2
             AltaActividad("Semana de la Arepa ", ListaCategorias[3], DateTime.Now.AddDays(3), ListaLugares[6], Actividad.edad_minima.C16, 1);
             AltaActividad("TOC TOC ", ListaCategorias[1], DateTime.Now.AddDays(1), ListaLugares[7], Actividad.edad_minima.P, 15);
             AltaActividad("Los Buitres ", ListaCategorias[2], DateTime.Now.AddDays(10), ListaLugares[7], Actividad.edad_minima.P, 1509);
+         
+
 
             DateTime fechaConHoraUsuario1 = new DateTime(1999, 8, 11, 0, 0, 0);
             DateTime fechaConHoraUsuario2 = new DateTime(1989, 8, 09, 0, 0, 0);

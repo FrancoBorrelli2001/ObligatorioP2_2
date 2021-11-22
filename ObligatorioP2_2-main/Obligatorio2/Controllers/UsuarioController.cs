@@ -80,15 +80,19 @@ namespace Obligatorio2.Controllers
             return View();
         }
 
-        public IActionResult VerComprasACancelar()
-        {
-            List<Compra> ComprasCancelar = s.ObtenerComprasACancelar();
-            return View(ComprasCancelar);
-        }
+        
 
         public IActionResult CancelarCompra(int id)
         {
-            ViewBag.compra = s.BuscarCompra(id);
+            Compra compra = s.BuscarCompraACancelar(id);
+            if (compra != null)
+            {
+                ViewBag.compra = s.BuscarCompraACancelar(id);
+            }
+            else
+            {
+                ViewBag.msg = "La compra tiene una actividad la cual ocurrira en menos de 24 horas, por lo que no se puede cancelar";
+            }
             return View();
         }
 

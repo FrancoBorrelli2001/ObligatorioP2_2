@@ -480,7 +480,6 @@ D:\Documentos\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug
 D:\Documentos\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Login.cshtml.g.cs
 D:\Documentos\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Registro.cshtml.g.cs
 D:\Documentos\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\VerCompras.cshtml.g.cs
-D:\Documentos\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\VerComprasACancelar.cshtml.g.cs
 D:\Documentos\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 D:\Documentos\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 D:\Documentos\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Obligatorio2.RazorTargetAssemblyInfo.cache
