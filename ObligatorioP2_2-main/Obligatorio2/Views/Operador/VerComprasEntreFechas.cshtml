@@ -3,15 +3,15 @@
 
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form method="post" id="frmComprasEntreFechas">
             <div class="form-group">
                 <label class="control-label">Fecha de inicio</label>
-                <input type="date" name="fecha1" class="form-control" />
+                <input type="date" name="fecha1" id="fecha1" class="form-control" />
                 <span class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">Fecha final</label>
-                <input type="date" name="fecha2" class="form-control" />
+                <input type="date" name="fecha2" id="fecha2" class="form-control" />
                 <span class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -21,76 +21,100 @@
     </div>
 </div>
 
-    @if (@ViewBag.LC != null)
+@if (@ViewBag.LC != null)
+{
+    @if (ViewBag.LC.Count == 0)
     {
-        @if (ViewBag.LC.Count == 0)
-        {
-            <h5>No existen compras en el rango de fechas seleccionado.</h5>
-        }
-        else
-        {
-            <hr />
-            <h4>Lista de Compras</h4>
-
-            <table class="table">
-                <thead class="text-center">
-                    <tr>
-                        <th>
-                            ID Compra
-                        </th>
-                        <th>
-                            Nombre de la Actividad
-                        </th>
-                        <th>
-                            Cantidad de Entradas
-                        </th>
-                        <th>
-                            Usuario
-                        </th>
-                        <th>
-                            Fecha y Hora de la compra
-                        </th>
-                        <th>
-                            Estado
-                        </th>
-                        <th>
-                            Precio Final
-                        </th>
-
-                    </tr>
-                </thead>
-                <tbody class="text-center">
-                    @foreach (var compra in @ViewBag.LC)
-                    {
-                        var PrecioFinal = compra.CalcularPrecioFinal();
-                        <tr>
-                            <td>
-                                @compra.ID_compra
-                            </td>
-                            <td>
-                                @compra.actividad.Nombre
-                            </td>
-                            <td>
-                                @compra.cant_Entradas
-                            </td>
-                            <td>
-                                @compra.usuario.nombreUsuario
-                            </td>
-                            <td>
-                                @compra.fecha_hora_compra
-                            </td>
-                            <td>
-                                @compra.estado
-                            </td>
-                            <td>
-                                @compra.Precio_Final
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-            <br />
-            <h5>El precio total de todas las compras es @ViewBag.PrecioTotal</h5>
-            <hr />
-        }
+        <h5>No existen compras en el rango de fechas seleccionado.</h5>
     }
+    else
+    {
+        <hr />
+        <h4>Lista de Compras</h4>
+
+        <table class="table">
+            <thead class="text-center">
+                <tr>
+                    <th>
+                        ID Compra
+                    </th>
+                    <th>
+                        Nombre de la Actividad
+                    </th>
+                    <th>
+                        Cantidad de Entradas
+                    </th>
+                    <th>
+                        Usuario
+                    </th>
+                    <th>
+                        Fecha y Hora de la compra
+                    </th>
+                    <th>
+                        Estado
+                    </th>
+                    <th>
+                        Precio Final
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                @foreach (var compra in @ViewBag.LC)
+                {
+                    var PrecioFinal = compra.CalcularPrecioFinal();
+                    <tr>
+                        <td>
+                            @compra.ID_compra
+                        </td>
+                        <td>
+                            @compra.actividad.Nombre
+                        </td>
+                        <td>
+                            @compra.cant_Entradas
+                        </td>
+                        <td>
+                            @compra.usuario.nombreUsuario
+                        </td>
+                        <td>
+                            @compra.fecha_hora_compra
+                        </td>
+                        <td>
+                            @compra.estado
+                        </td>
+                        <td>
+                            @compra.Precio_Final
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <br />
+        <h5>El precio total de todas las compras es @ViewBag.PrecioTotal</h5>
+        <hr />
+    }
+}
+
+<h2 id="hMensaje"></h2>
+
+@* VALIDACION EN JS *@
+@section Scripts{
+    <script>
+        document.querySelector("#frmComprasEntreFechas").addEventListener('submit', validarDatos);
+
+        function validarDatos(evento) {
+            evento.preventDefault();
+            let fecha1 = document.querySelector("#fecha1").value;
+            let fecha2 = document.querySelector("#fecha2").value;
+
+            if (fecha1 != "" && fecha2!= "") {
+                this.submit();
+            }else{
+                document.querySelector("#hMensaje").innerHTML = "Las fechas no pueden estar vacías";
+            }
+
+
+
+           }
+    </script>
+}

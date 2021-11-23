@@ -2,35 +2,35 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form method="post" id="formularioRegistro">
             <div class="form-group">
                 <label class="control-label">Nombre</label>
-                <input type="text" name="nombre" class="form-control" required />
+                <input type="text" name="nombre" id="nombre" class="form-control" required />
                 <span class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">Apellido</label>
-                <input type="text" name="apellido" class="form-control" required />
+                <input type="text" name="apellido" id="apellido" class="form-control" required />
                 <span class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">Email</label>
-                <input type="email" name="email" class="form-control" required />
+                <input type="email" name="email" id="email" class="form-control" required />
                 <span class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">Fecha de Nacimiento</label>
-                <input type="date" name="fechaNacimiento" class="form-control" required />
+                <input type="date" name="fechaNacimiento" id="fechaNacimiento" class="form-control" required />
                 <span class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">Nombre de Usuario</label>
-                <input type="text" name="nombreUsuario" class="form-control" required />
+                <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" required />
                 <span class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">Contraseña</label>
-                <input type="password" name="password" class="form-control" required />
+                <input type="password" name="password" id="password" class="form-control" required />
                 <span class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -39,7 +39,34 @@
         </form>
     </div>
 </div>
-<p>@ViewBag.msg</p>
+<p id="pMensaje">@ViewBag.msg</p>
 <div>
     <a asp-action="Login">Volver</a>
 </div>
+
+
+@* VALIDACION EN JS *@
+@section Scripts{
+    <script>
+        document.querySelector("#formularioRegistro").addEventListener('submit', validarDatos);
+
+        function validarDatos(evento) {
+            evento.preventDefault();
+            let nombre = document.querySelector("#nombre").value;
+            let apellido = document.querySelector("#apellido").value;
+            let email = document.querySelector("#email").value;
+          
+            let nombreUsuario = document.querySelector("#nombreUsuario").value;
+            let password = document.querySelector("#password").value;
+
+            if (nombre != "" && apellido != "" && email != "" && nombreUsuario != "" && password != "" && password.length >= 6 && nombre.length >= 2 && apellido.length >= 2) {
+                this.submit();
+            }else{
+                document.querySelector("#pMensaje").innerHTML = "Error en los datos";
+            }
+
+
+
+           }
+    </script>
+}

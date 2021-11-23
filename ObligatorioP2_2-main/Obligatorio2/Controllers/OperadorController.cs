@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Obligatorio2.Models;
 using System;
@@ -33,7 +34,14 @@ namespace Obligatorio2.Controllers
 
         public IActionResult VerComprasEntreFechas()
         {
-            return View();
+            if (HttpContext.Session.GetString("RolLogueado") == "Operador")
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
 
@@ -51,19 +59,43 @@ namespace Obligatorio2.Controllers
 
         public IActionResult VerClientes()
         {
-            List<Usuario> ClientesOrdenados = s.GetClientes().OrderBy(cliente => cliente.apellido).ThenBy(cliente => cliente.nombre).ToList();
-            return View(ClientesOrdenados);
+            if (HttpContext.Session.GetString("RolLogueado") == "Operador")
+            {
+                List<Usuario> ClientesOrdenados = s.GetClientes().OrderBy(cliente => cliente.apellido).ThenBy(cliente => cliente.nombre).ToList();
+                return View(ClientesOrdenados);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
         }
 
         public IActionResult Estadisticas()
         {
-            return View();
+            if (HttpContext.Session.GetString("RolLogueado") == "Operador")
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            
         }
 
         public IActionResult ListarActividadesSegunLugar()
         {
-            ViewBag.Lugares = s.GetLugares();
-            return View();
+            if (HttpContext.Session.GetString("RolLogueado") == "Operador")
+            {
+                ViewBag.Lugares = s.GetLugares();
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
         }
 
         [HttpPost]
@@ -77,8 +109,16 @@ namespace Obligatorio2.Controllers
 
         public IActionResult VerActividadesEntreFechasYCategoria()
         {
-            ViewBag.Categorias = s.GetCategorias();
-            return View();
+            if (HttpContext.Session.GetString("RolLogueado") == "Operador")
+            {
+                ViewBag.Categorias = s.GetCategorias();
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
         }
 
         [HttpPost]
@@ -95,19 +135,40 @@ namespace Obligatorio2.Controllers
 
         public IActionResult ComprasMayorValor()
         {
-            List<Compra> resu = s.ObtenerComprasMayorValor();
-            return View(resu);
+            if (HttpContext.Session.GetString("RolLogueado") == "Operador")
+            {
+                List<Compra> resu = s.ObtenerComprasMayorValor();
+                return View(resu);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         public IActionResult Otros()
         {
-            return View();
+            if (HttpContext.Session.GetString("RolLogueado") == "Operador")
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         public IActionResult CambiarPrecioBaseActividades()
         {
-            ViewBag.PrecioBaseActual = s.GetPrecioBaseActividad();
-            return View();
+            if (HttpContext.Session.GetString("RolLogueado") == "Operador")
+            {
+                ViewBag.PrecioBaseActual = s.GetPrecioBaseActividad();
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         [HttpPost]
@@ -129,8 +190,15 @@ namespace Obligatorio2.Controllers
         //Cambia el Aforo Máximo
         public IActionResult CambiarAforoMaximo()
         {
-            ViewBag.AforoActual = s.GetAforoMaximo();
-            return View();
+            if (HttpContext.Session.GetString("RolLogueado") == "Operador")
+            {
+                ViewBag.AforoActual = s.GetAforoMaximo();
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         [HttpPost]
@@ -152,8 +220,15 @@ namespace Obligatorio2.Controllers
         //Cambia el precio de las butacas
         public IActionResult CambiarPrecioButacas()
         {
-            ViewBag.PrecioButacasActual = s.GetPrecioButacas();
-            return View();
+            if (HttpContext.Session.GetString("RolLogueado") == "Operador")
+            {
+                ViewBag.PrecioButacasActual = s.GetPrecioButacas();
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         [HttpPost]

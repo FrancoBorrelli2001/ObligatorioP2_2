@@ -40,12 +40,12 @@ namespace Obligatorio2.Controllers
                     HttpContext.Session.SetString("RolLogueado", "Operador");
                 }
                 HttpContext.Session.SetInt32("IdLogueado", buscado.ID_usuario);
-                ViewBag.msg = "Usuario ingresado";
+               
                 return View("~/Views/Home/Index.cshtml");
             }
             else
             {
-                ViewBag.msg = "El usuario no existe en el sistema";
+                ViewBag.msg = "El usuario y/o la contraseña no son correctos";
                 return View();
             }
         }

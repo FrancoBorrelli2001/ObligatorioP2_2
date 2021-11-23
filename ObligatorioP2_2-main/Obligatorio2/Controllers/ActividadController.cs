@@ -63,7 +63,7 @@ namespace Obligatorio2.Controllers
                 return RedirectToAction("Comprar", new
                 {
                     id = idActividad,
-                    msg = "ERROR",
+                    msg = "La cantidad de entradas debe ser mayor que 0",
                 });
             }
         }
