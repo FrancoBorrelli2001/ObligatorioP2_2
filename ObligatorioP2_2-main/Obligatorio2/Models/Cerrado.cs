@@ -10,7 +10,6 @@ namespace Obligatorio2
         //Valor aforo máximo (0-100)
         private static int AforoMaximo  = 100;
 
-
         public bool Accesibilidad_total { get; set; }
         public int Mantenimiento { get; set; }
         public double PrecioButaca { get; set; }
@@ -24,10 +23,6 @@ namespace Obligatorio2
         {
             AforoMaximo = nuevoAforo;
         }
-
-
-    
-
 
         public Cerrado(string nombre, double dimension,bool accesibilidad_total,int mantenimiento,double precioButaca):base(nombre,dimension)
         {

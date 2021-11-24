@@ -55,18 +55,15 @@
             let nombre = document.querySelector("#nombre").value;
             let apellido = document.querySelector("#apellido").value;
             let email = document.querySelector("#email").value;
-          
+
             let nombreUsuario = document.querySelector("#nombreUsuario").value;
             let password = document.querySelector("#password").value;
 
             if (nombre != "" && apellido != "" && email != "" && nombreUsuario != "" && password != "" && password.length >= 6 && nombre.length >= 2 && apellido.length >= 2) {
                 this.submit();
-            }else{
+            } else {
                 document.querySelector("#pMensaje").innerHTML = "Error en los datos";
             }
-
-
-
-           }
+        }
     </script>
 }

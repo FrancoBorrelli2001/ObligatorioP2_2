@@ -613,7 +613,6 @@ C:\Users\cloti\OneDrive\Documents\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Ob
 C:\Users\cloti\OneDrive\Documents\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Login.cshtml.g.cs
 C:\Users\cloti\OneDrive\Documents\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Registro.cshtml.g.cs
 C:\Users\cloti\OneDrive\Documents\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\VerCompras.cshtml.g.cs
-C:\Users\cloti\OneDrive\Documents\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\VerComprasACancelar.cshtml.g.cs
 C:\Users\cloti\OneDrive\Documents\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\cloti\OneDrive\Documents\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\cloti\OneDrive\Documents\GitHub\ObligatorioP2_2\ObligatorioP2_2-main\Obligatorio2\obj\Debug\netcoreapp3.1\Obligatorio2.RazorTargetAssemblyInfo.cache
