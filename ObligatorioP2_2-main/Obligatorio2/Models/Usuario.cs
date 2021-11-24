@@ -68,6 +68,7 @@ namespace Obligatorio2
             "\n" + " - Edad Minima: " + fecha_nacimiento + "\n";
         }
 
+        //Ordenar lista de usuarios por apellido y nombre asc
         public int CompareTo([AllowNull] Usuario other)
         {
             if (this.apellido.CompareTo(other.apellido) > 0)
