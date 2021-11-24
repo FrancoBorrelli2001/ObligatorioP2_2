@@ -41,7 +41,7 @@ namespace Obligatorio2
 
 
         //Retorna usuarios con rol cliente
-        internal List<Usuario> GetClientes()
+        public List<Usuario> GetClientes()
         {
             List<Usuario> Clientes = new List<Usuario>();
 
@@ -52,6 +52,7 @@ namespace Obligatorio2
                     Clientes.Add(usu);
                 }
             }
+            Clientes.Sort();
             return Clientes;
         }
 

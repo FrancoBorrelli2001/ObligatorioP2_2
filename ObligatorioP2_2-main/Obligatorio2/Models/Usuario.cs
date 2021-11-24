@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Obligatorio2
 {
-    public class Usuario
+    public class Usuario : IComparable<Usuario>
     {
 
         public enum Roles
@@ -14,7 +15,6 @@ namespace Obligatorio2
 
         private static int UltimoID = 1;
         public int ID_usuario { get; }
-
         public string nombre { get; set; }
         public string apellido { get; set; }
         public string email { get; set; }
@@ -24,7 +24,7 @@ namespace Obligatorio2
         public Roles rol { get; set; }
 
         //Constructor para un usuario cliente
-        public Usuario(string nombre, string apellido, DateTime fecha_nacimiento, string nombreUsuario,string email,string password)
+        public Usuario(string nombre, string apellido, DateTime fecha_nacimiento, string nombreUsuario, string email, string password)
         {
             ID_usuario = UltimoID;
             UltimoID++;
@@ -38,7 +38,7 @@ namespace Obligatorio2
         }
 
         //Constructor para usuarios OPERADOR
-        public Usuario(string nombre, string apellido, DateTime fecha_nacimiento, string nombreUsuario, string email, string password,Roles rol)
+        public Usuario(string nombre, string apellido, DateTime fecha_nacimiento, string nombreUsuario, string email, string password, Roles rol)
         {
             ID_usuario = UltimoID;
             UltimoID++;
@@ -52,11 +52,7 @@ namespace Obligatorio2
         }
 
 
-
-
         //Constructor para un usuario nuevo sin identificar
-
-
         public Usuario()
         {
 
@@ -72,7 +68,32 @@ namespace Obligatorio2
             "\n" + " - Edad Minima: " + fecha_nacimiento + "\n";
         }
 
+        public int CompareTo([AllowNull] Usuario other)
+        {
+            if (this.apellido.CompareTo(other.apellido) > 0)
+            {
+                return 1;
+            }
+            else if (this.apellido.CompareTo(other.apellido) < 0)
+            {
+                return -1;
 
-
+            }
+            else
+            {
+                if (this.nombre.CompareTo(other.nombre) > 0)
+                {
+                    return 1;
+                }
+                else if (this.nombre.CompareTo(other.nombre) < 0)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
     }
 }

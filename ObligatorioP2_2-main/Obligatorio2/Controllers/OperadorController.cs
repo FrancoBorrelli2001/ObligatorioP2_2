@@ -61,8 +61,7 @@ namespace Obligatorio2.Controllers
         {
             if (HttpContext.Session.GetString("RolLogueado") == "Operador")
             {
-                List<Usuario> ClientesOrdenados = s.GetClientes().OrderBy(cliente => cliente.apellido).ThenBy(cliente => cliente.nombre).ToList();
-                return View(ClientesOrdenados);
+                return View(s.GetClientes());
             }
             else
             {
