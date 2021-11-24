@@ -12,10 +12,6 @@ namespace Obligatorio2
         public double Dimensiones { get; set; }
 
 
-
-
-
-
          public Lugar(string nombre, double dimension)
         {
 

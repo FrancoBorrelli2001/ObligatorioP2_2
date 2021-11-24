@@ -91,7 +91,7 @@ namespace Obligatorio2.Controllers
             }
             else
             {
-                ViewBag.msg = "La compra tiene una actividad la cual ocurrira en menos de 24 horas, por lo que no se puede cancelar";
+                ViewBag.msg = "No se puede cancelar una actividad con menos de 24hs de anticipación.";
             }
             return View();
         }

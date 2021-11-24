@@ -7,7 +7,7 @@ namespace Obligatorio2
     class Abierto : Lugar
     {
         //El precio es estático, no varía según el objeto
-        private static double PrecioButaca = 100;
+        private static double PrecioButaca = 170;
         
         public static double GetPrecioButaca()
         {

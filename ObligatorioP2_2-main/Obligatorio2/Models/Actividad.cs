@@ -29,7 +29,7 @@ namespace Obligatorio2
         }
 
         //Precio base, el cual es el mismo para todas las actividades
-        private static double PrecioBase = 100;
+        private static double PrecioBase = 170;
 
        
 

@@ -610,18 +610,18 @@ namespace Obligatorio2
         internal void Precarga()
         {
             //Lugares abiertos
-            AltaLugar("Andre Rieu", 50);
-            AltaLugar("Teatro de Verano", 80);
-            AltaLugar("Rural del prado", 200);
-            AltaLugar("Velodromo", 150);
-            AltaLugar("Estadio Centenario", 200);
+            AltaLugar("Andre Rieu", 0.5);
+            AltaLugar("Teatro de Verano", 0.8);
+            AltaLugar("Rural del prado", 2);
+            AltaLugar("Velodromo", 0.55);
+            AltaLugar("Estadio Centenario", 1.5);
 
             //Lugares cerrados
-            AltaLugar("Teatro Solis", 1200, true, 90, 200);
-            AltaLugar("Castillo Pittamiglio", 500, false, 40, 300);
-            AltaLugar("Teatro Metro", 3000, false, 50, 800);
-            AltaLugar("Antel Arena", 3500, false, 80, 150);
-            AltaLugar("Cinema center", 1000, false, 90, 200);
+            AltaLugar("Teatro Solis", 1200, true, 90, 0.5);
+            AltaLugar("Castillo Pittamiglio", 500, false, 40, 0.1);
+            AltaLugar("Teatro Metro", 3000, false, 50, 0.7);
+            AltaLugar("Antel Arena", 3500, false, 80, 1.15);
+            AltaLugar("Cinema center", 1000, false, 90, 0.2);
 
             // Categorías
             AltaCategoria("Cine", "cine", Categoria.TiposCategoria.cine);
@@ -639,8 +639,8 @@ namespace Obligatorio2
             //Actividades en lugares cerrados
             AltaActividad("The Stand Up Show ", ListaCategorias[1], DateTime.Now.AddDays(9), ListaLugares[7], Actividad.edad_minima.C16, 48);
             AltaActividad("Sinfonica Uruguaya ", ListaCategorias[2], DateTime.Now.AddDays(20), ListaLugares[5], Actividad.edad_minima.P, 609);
-            AltaActividad("Rapido y Furioso 30 (Brian lives) ", ListaCategorias[0], DateTime.Now.AddDays(2), ListaLugares[9], Actividad.edad_minima.P, 2);
-            AltaActividad("Semana de la Arepa ", ListaCategorias[3], DateTime.Now.AddDays(3), ListaLugares[6], Actividad.edad_minima.C16, 1);
+            AltaActividad("Rapido y Furioso 30 (Brian lives)", ListaCategorias[0], DateTime.Now.AddDays(1), ListaLugares[9], Actividad.edad_minima.P, 2);
+            AltaActividad("Semana de la Arepa ", ListaCategorias[3], DateTime.Now.AddDays(1), ListaLugares[6], Actividad.edad_minima.C16, 1);
             AltaActividad("TOC TOC ", ListaCategorias[1], DateTime.Now.AddDays(1), ListaLugares[7], Actividad.edad_minima.P, 15);
             AltaActividad("Los Buitres ", ListaCategorias[2], DateTime.Now.AddDays(10), ListaLugares[7], Actividad.edad_minima.P, 1509);
 
@@ -653,20 +653,24 @@ namespace Obligatorio2
             AltaUsuario("Agustina", "Fernandez", "Agustina@gmail.com", DateTime.Parse("1985-10-06"), "AgusF", "Ab123456");
 
             //Operadores
-            Usuario operador1 = new Usuario("Joaquin", "Rodriguez", fechaConHoraUsuario2, "Admin1", "Joaquin@gmail.com", "Ab123456", Usuario.Roles.Operador);
-            Usuario operador2 = new Usuario("Rafael", "Cohen", fechaConHoraUsuario1, "Admin2", "Rafael@gmail.com", "Ab123456", Usuario.Roles.Operador);
+            Usuario operador1 = new Usuario("Joaquin", "Rodriguez", DateTime.Parse("1985-08-15"), "Admin1", "Joaquin@gmail.com", "Ab123456", Usuario.Roles.Operador);
+            Usuario operador2 = new Usuario("Rafael", "Cohen", DateTime.Parse("1975-07-17"), "Admin2", "Rafael@gmail.com", "Ab123456", Usuario.Roles.Operador);
             ListaUsuarios.Add(operador1);
             ListaUsuarios.Add(operador2);
 
             //Compras
-            AltaCompra(ListaActividades[1], 2, ListaUsuarios[1], DateTime.Now.AddDays(-2));
-            AltaCompra(ListaActividades[3], 2, ListaUsuarios[2], DateTime.Now.AddDays(-7));
-            AltaCompra(ListaActividades[4], 2, ListaUsuarios[2], DateTime.Now.AddDays(-4));
-            AltaCompra(ListaActividades[7], 2, ListaUsuarios[2], DateTime.Now.AddDays(-8));
-            AltaCompra(ListaActividades[2], 2, ListaUsuarios[3], DateTime.Now.AddDays(-3));
-            AltaCompra(ListaActividades[9], 2, ListaUsuarios[3], DateTime.Now);
-            AltaCompra(ListaActividades[8], 2, ListaUsuarios[4], DateTime.Now);
-            AltaCompra(ListaActividades[7], 2, ListaUsuarios[4], DateTime.Now);
+            AltaCompra(ListaActividades[1], 3, ListaUsuarios[1], DateTime.Now.AddDays(-20));
+            AltaCompra(ListaActividades[3], 4, ListaUsuarios[1], DateTime.Now.AddDays(-7));
+            AltaCompra(ListaActividades[6], 2, ListaUsuarios[2], DateTime.Now.AddDays(-8));
+            AltaCompra(ListaActividades[2], 4, ListaUsuarios[2], DateTime.Now);
+            AltaCompra(ListaActividades[4], 1, ListaUsuarios[3], DateTime.Now.AddDays(-14));
+            AltaCompra(ListaActividades[7], 1, ListaUsuarios[3], DateTime.Now.AddDays(-8));
+            AltaCompra(ListaActividades[9], 5, ListaUsuarios[4], DateTime.Now.AddDays(-12));
+            AltaCompra(ListaActividades[8], 3, ListaUsuarios[4], DateTime.Now);
+            AltaCompra(ListaActividades[10], 1, ListaUsuarios[5], DateTime.Now.AddDays(-2));
+            AltaCompra(ListaActividades[9], 6, ListaUsuarios[5], DateTime.Now);
+            AltaCompra(ListaActividades[5], 3, ListaUsuarios[6], DateTime.Now);
+            AltaCompra(ListaActividades[7], 2, ListaUsuarios[6], DateTime.Now.AddDays(-13));
         }
     }
 }
