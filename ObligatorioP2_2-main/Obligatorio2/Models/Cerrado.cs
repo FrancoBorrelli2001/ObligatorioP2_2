@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Obligatorio2
 {
-    public class Cerrado:Lugar
+    public class Cerrado : Lugar
     {
 
         //Valor aforo máximo (0-100)
-        private static int AforoMaximo  = 100;
+        private static int AforoMaximo = 100;
 
         public bool Accesibilidad_total { get; set; }
         public int Mantenimiento { get; set; }
@@ -24,9 +24,9 @@ namespace Obligatorio2
             AforoMaximo = nuevoAforo;
         }
 
-        public Cerrado(string nombre, double dimension,bool accesibilidad_total,int mantenimiento,double precioButaca):base(nombre,dimension)
+        public Cerrado(string nombre, double dimension, bool accesibilidad_total, int mantenimiento, double precioButaca) : base(nombre, dimension)
         {
-         Accesibilidad_total=accesibilidad_total;
+            Accesibilidad_total = accesibilidad_total;
             Mantenimiento = mantenimiento;
             PrecioButaca = precioButaca;
 
@@ -42,17 +42,10 @@ namespace Obligatorio2
             if (AforoMaximo < 50)
             {
                 precio = precio * 1.3;
-            }else if(AforoMaximo>50 && AforoMaximo < 70)
+            }
+            else if (AforoMaximo > 50 && AforoMaximo < 70)
             {
                 precio = precio * 1.15;
-            }
-
-
-            //Si el mantenimiento es mayor a 1000 pesos se le agrega un 5%
-
-            if (Mantenimiento > 1000)
-            {
-                precio = precio * 1.05;
             }
             return precio;
         }
@@ -62,16 +55,13 @@ namespace Obligatorio2
             string tieneA;
             if (Accesibilidad_total)
             {
-                 tieneA = "Si";
+                tieneA = "Si";
             }
             else
             {
-                 tieneA = "No";
+                tieneA = "No";
             }
             return base.ToString() + "- Precio butaca: " + PrecioButaca + "- Mantenimiento: " + Mantenimiento + "- Acessibilidad: " + tieneA + "- Aforo Máximo: " + AforoMaximo;
         }
-
-
     }
-    
 }
