@@ -324,7 +324,7 @@ namespace Obligatorio2
             return resu;
         }
 
-       
+       //Da me gusta a la actividad con el id que se pasa por parametro
         internal void DarMG(int id)
         {
             foreach (Actividad act in ListaActividades)
@@ -396,6 +396,7 @@ namespace Obligatorio2
             return resu;
         }
 
+        //Retorna el precio total de todas las compras en el sistema
         internal double ObtenerPrecioTotalDeCompras(List<Compra> compras)
         {
             double resu = 0;
